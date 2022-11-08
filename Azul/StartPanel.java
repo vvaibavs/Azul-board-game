@@ -9,12 +9,12 @@ public class StartPanel{
     private BufferedImage menu;
     public StartPanel() {
         try {
-            menu = ImageIO.read(AzulPanel.class.getResource("/Azul/Assets/main menu.jpg"));
+            menu = ImageIO.read(new File("Azul/Assets/main menu.jpg"));
         } catch (Exception e) {
             System.out.println("failure");
         }
     }
     public void drawMainMenu(Graphics g) {
-        // g.drawImage(menu, 0, 0, 1600, 900, null);
+         g.drawImage(menu, 0, 0, 1600, 900, null);
     }
 }

@@ -17,7 +17,7 @@ public class AzulPanel extends JPanel implements MouseListener{
     }
     public void paint(Graphics g) {
         System.out.println("HI");
-        
+        start.drawMainMenu(g);
     }
     @Override
     public void mouseClicked(java.awt.event.MouseEvent e) {
