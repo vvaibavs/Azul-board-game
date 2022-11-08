@@ -8,16 +8,16 @@
             "type": "java",
             "name": "Launch Current File",
             "request": "launch",
-            "mainClass": "${file}"
-            "console" : "java.debug.settings.console": "internalConsole"
-        },
+            "mainClass": "${file}",
+            "console" : "java.debug.settings.console", "internalConsole"
+        }
         {
             "type": "java",
             "name": "Launch AzulRunner",
             "request": "launch",
             "mainClass": "AzulRunner",
-            "projectName": "Azul-board-game_b1c4d54"
-            "console" : "java.debug.settings.console": "internalConsole"
+            "projectName": "Azul-board-game_b1c4d54",
+            "console" : "java.debug.settings.console", "internalConsole"
         }
     ]
 }
