@@ -10,8 +10,8 @@ public class StartPanel{
     private BufferedImage start;
     public StartPanel() {
         try {
-            menu = ImageIO.read(new File("Azul/Assets/main menu.jpg"));
-            start = ImageIO.read(new File("Azul/Assets/start.png"));
+            menu = ImageIO.read(new File("assets/main menu.jpg"));
+            start = ImageIO.read(new File("assets/start.png"));
         } catch (Exception e) {
             System.out.println("failure");
         }
