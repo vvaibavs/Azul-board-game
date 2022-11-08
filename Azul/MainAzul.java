@@ -2,7 +2,7 @@ import java.util.*;
 import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener; 
 
-public class MainAzul implements MouseListener{
+public class MainAzul{
 
     public static ArrayList<Token> discarded;
     public Factory tempFact;
@@ -18,6 +18,7 @@ public class MainAzul implements MouseListener{
 
         mouseX = -1;
         mouseY = -1;
+        
     }
 
     public void choicePull(Player p) {
@@ -46,35 +47,6 @@ public class MainAzul implements MouseListener{
             p1.pTurn = true;
             p4.pTurn = false;
         }
-    }
-    @Override
-    public void mouseClicked(MouseEvent e) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void mousePressed(MouseEvent e) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void mouseReleased(MouseEvent e) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void mouseEntered(MouseEvent e) {
-        // TODO Auto-generated method stub
-        
-    }
-
-    @Override
-    public void mouseExited(MouseEvent e) {
-        // TODO Auto-generated method stub
-        
     }
 
 }
