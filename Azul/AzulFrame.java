@@ -11,5 +11,4 @@ public class AzulFrame extends JFrame {
         add(new AzulPanel());
         setVisible(true);  
     }
-//System.out.println(e.getX() + " / " + e.getY());
 }
