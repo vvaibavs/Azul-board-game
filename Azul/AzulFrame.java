@@ -10,5 +10,5 @@ public class AzulFrame extends JFrame {
     setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     setVisible(true);  
     }
-////System.out.println(e.getX() + " / " + e.getY());
+//System.out.println(e.getX() + " / " + e.getY());
 }
