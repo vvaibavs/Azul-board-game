@@ -1,2 +1,2 @@
 0,396 - 596 900 - (board)
-621 631 - 979 738 - (start button)
+629 636 - 974 735 - (start button)

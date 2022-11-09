@@ -9,6 +9,7 @@ public class AzulFrame extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(WIDTH,HEIGHT);
         add(new AzulPanel());
+        setResizable(false);
         setVisible(true);  
     }
 }

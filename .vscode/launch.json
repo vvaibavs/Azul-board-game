@@ -10,7 +10,7 @@
             "request": "launch",
             "mainClass": "${file}",
             "console" : "java.debug.settings.console", "internalConsole"
-        }
+        },
         {
             "type": "java",
             "name": "Launch AzulRunner",

@@ -10,14 +10,28 @@ public class AzulPanel extends JPanel implements MouseListener{
     public MainAzul main;
     public StartPanel start;
     public PlayerPanel player;
+    private BufferedImage background;
     public AzulPanel() {
         main = new MainAzul();
         start = new StartPanel();
+        player = new PlayerPanel();
+        try {
+            background = ImageIO.read(new File("assets/background.jpg"));
+        } catch (Exception e) {
+            System.out.println("failure");
+        }
+        player.height = getHeight();
+        player.width = getWidth();
         addMouseListener(this);
     }
     public void paint(Graphics g) {
         if(main.start) {
             start.drawMainMenu(g);
+        } else {
+            g.drawImage(background, 0, 0, getWidth(), getHeight(), null);
+            if(player.p1.pTurn) {
+                player.drawBoard(g);
+            }
         }
     }
     @Override
@@ -25,6 +39,9 @@ public class AzulPanel extends JPanel implements MouseListener{
         main.mouseX = e.getX();
         main.mouseY = e.getY();
         System.out.println(main.mouseX + " " + main.mouseY);
+        if(main.mouseX >= 629 && main.mouseY >= 636 && main.mouseX <= 974 && main.mouseY <= 735) {
+            main.start = false;
+        }
         repaint();
     }
     @Override
