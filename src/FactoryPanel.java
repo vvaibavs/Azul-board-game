@@ -12,35 +12,10 @@ public class FactoryPanel {
     public FactoryPanel(){
         try {
             factory = ImageIO.read(FactoryPanel.class.getResource("/Image/factory.png"));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        try {
             black = ImageIO.read(FactoryPanel.class.getResource("/Image/black.jpg"));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        try {
             blue = ImageIO.read(FactoryPanel.class.getResource("/Image/blue.jpg"));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        try {
             black = ImageIO.read(FactoryPanel.class.getResource("/Image/red.jpg"));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        try {
             black = ImageIO.read(FactoryPanel.class.getResource("/Image/white.jpg"));
-        } catch (IOException e) {
-            // TODO Auto-generated catch block
-            e.printStackTrace();
-        }
-        try {
             black = ImageIO.read(FactoryPanel.class.getResource("/yellow.jpg"));
         } catch (IOException e) {
             // TODO Auto-generated catch block

@@ -13,7 +13,6 @@ public class Player {
     }
 
     public boolean moveTokens() {
-        //check w arraylist on main
         return false;
     }
 
@@ -22,10 +21,7 @@ public class Player {
     }
 
     public boolean gameWinner() {
-        return win;
-    }
-    public void winner(){
-        win = true;
+        return false;
     }
 }
  
