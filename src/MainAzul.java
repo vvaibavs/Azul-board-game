@@ -33,6 +33,13 @@ public class MainAzul{
         return -1;
     }
 
+    public ArrayList<Token> getBag(){
+        return bag;
+    }
+
+    public void setBag(int r){
+        bag.remove(r);
+    }
     public void nextPlayer(Player p1, Player p2, Player p3, Player p4) {
         if(p1.pTurn) {
             p2.pTurn = true;

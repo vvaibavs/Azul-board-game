@@ -8,9 +8,10 @@ public class Factory {
         posX = x;
         posY = y;
         main = new MainAzul();
+        factTokens = new ArrayList<Token>();
     }
 
     public void fills() {
-
+        ArrayList<Token> mBag = main.getBag();
     }
 }
