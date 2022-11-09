@@ -49,13 +49,13 @@ public class FactoryPanel {
 
         Factory[] facts = {f1, f2, f3, f4, f5, f6, f7, f8, f9};
         //playerboard size is 500x500
-        int x = ;
-        int y = ;
+        int x = 550;
+        int y = 450;
         for(int i = 0; i<facts.length; i++){
-            facts[i] = new Factory();
+            x = (int)(Math.random()*1050)+550;
+            y = (int)(Math.random()*1150) + 450;
+            facts[i] = new Factory(x, y);
         }
-
-
 
     }
 
