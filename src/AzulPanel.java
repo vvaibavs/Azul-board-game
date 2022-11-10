@@ -10,11 +10,13 @@ public class AzulPanel extends JPanel implements MouseListener{
     public MainAzul main;
     public StartPanel start;
     public PlayerPanel player;
+    public FactoryPanel factory;
     private BufferedImage background;
     public AzulPanel() {
         main = new MainAzul();
         start = new StartPanel();
         player = new PlayerPanel();
+        factory = new FactoryPanel();
         try {
             background = ImageIO.read(new File("assets/background.jpg"));
         } catch (Exception e) {
@@ -22,6 +24,7 @@ public class AzulPanel extends JPanel implements MouseListener{
         }
         player.height = getHeight();
         player.width = getWidth();
+
         addMouseListener(this);
     }
     public void paint(Graphics g) {
@@ -31,6 +34,7 @@ public class AzulPanel extends JPanel implements MouseListener{
             start.drawMainMenu(g);
         } else {
             g.drawImage(background, 0, 0, getWidth(), getHeight(), null);
+            factory.drawFactories(g);
             if(player.p1.pTurn) {
                 player.drawBoard(g);
                 g.drawString("Current Player: 1", 5 , 330); 
@@ -48,6 +52,7 @@ public class AzulPanel extends JPanel implements MouseListener{
                 g.drawString("Current Player: 4", 5 , 330); 
             }
         }
+
     }
     @Override
     public void mouseClicked(java.awt.event.MouseEvent e) {
