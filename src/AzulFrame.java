@@ -11,5 +11,6 @@ public class AzulFrame extends JFrame {
         add(new AzulPanel());
         setResizable(false);
         setVisible(true);  
+        
     }
 }

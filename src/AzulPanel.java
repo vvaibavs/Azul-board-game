@@ -25,12 +25,27 @@ public class AzulPanel extends JPanel implements MouseListener{
         addMouseListener(this);
     }
     public void paint(Graphics g) {
+        Font font = new Font("Serif", Font.PLAIN, 52);
+        g.setFont(font);
         if(main.start) {
             start.drawMainMenu(g);
         } else {
             g.drawImage(background, 0, 0, getWidth(), getHeight(), null);
             if(player.p1.pTurn) {
                 player.drawBoard(g);
+                g.drawString("Current Player: 1", 5 , 330); 
+            }
+            if(player.p2.pTurn) {
+                player.drawBoard(g); 
+                g.drawString("Current Player: 2", 5 , 330); 
+            }
+            if(player.p3.pTurn) {
+                player.drawBoard(g);
+                g.drawString("Current Player: 3", 5 , 330); 
+            }
+            if(player.p4.pTurn) {
+                player.drawBoard(g);
+                g.drawString("Current Player: 4", 5 , 330); 
             }
         }
     }

@@ -3,3 +3,8 @@
 200 531 - 238 569 - (1paternline) (to go down add 43) (to go right subtract 43)
 cube size 38-38
 263 530 - 300 568 305 
+
+Container c = getContentPane();
+BufferedImage im = new BufferedImage(c.getWidth(), c.getHeight(), BufferedImage.TYPE_INT_ARGB);
+c.paint(im.getGraphics());
+ImageIO.write(im, "PNG", new File("shot.png"));
