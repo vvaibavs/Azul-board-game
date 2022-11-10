@@ -20,4 +20,13 @@ public class Factory {
             main.setBag(r);
         }
     }
+    public ArrayList<Token> getTokens(){
+        return factTokens;
+    }
+    public int getX(){
+        return posX;
+    }
+    public int getY(){
+        return posY;
+    }
 }
