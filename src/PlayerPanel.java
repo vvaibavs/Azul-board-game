@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.io.*;
 public class PlayerPanel {
     public Player p1, p2, p3, p4;
-    private BufferedImage board,red,yellow,white,black,blue,onetile,pointercounter,xtile;
+    private BufferedImage board,red,yellow,white,black,blue,onetile,pointercounter,xtile,gg;
     public int width, height;
     public PlayerPanel() {
         p1 = new Player();
@@ -17,6 +17,7 @@ public class PlayerPanel {
         height = 0;
         p1.pTurn = true;
         try {
+            gg = ImageIO.read(new File("assets/Final azul board.jpg"));
             board = ImageIO.read(new File("assets/Final azul board.jpg"));
             yellow = ImageIO.read(new File("assets/yellow.jpg"));
             red = ImageIO.read(new File("assets/red.jpg"));
@@ -41,8 +42,17 @@ public class PlayerPanel {
             g.drawImage(yellow, boardColumn(4), boardRow(5), 38, 38, null);
             //g.drawImage(blue, 200, 574, 38, 38, null);
             //g.drawImage(red, 200, 531, 38, 38, null);
+            BufferedImage image = new BufferedImage(1600, 900, BufferedImage.TYPE_INT_RGB);
+            image = image.getSubimage(0, 350, 500, 500);
+            g.drawImage(image,894 ,337,500,500,null);
+          //  gg = image.createGraphics();
+          //  gg.translate(-100, -20);  // start point of region negate
+            
+          //  g.drawImage(gg,700,700,200,200,null);
+            
         }
     }
+
     public int boardRow(int x) {
         if(x == 1) {
             return 531;
