@@ -18,7 +18,22 @@ public class MainAzul{
 
         mouseX = -1;
         mouseY = -1;
-        
+        for(int i = 0; i < 20; i++) {
+            bag.add(new Token("black"));
+        }
+        for(int j = 0; j < 20; j++) {
+            bag.add(new Token("blue"));
+        }
+        for(int k = 0; k < 20; k++) {
+            bag.add(new Token("red"));
+        }
+        for(int x = 0; x < 20; x++) {
+            bag.add(new Token("white"));
+        }
+        for(int y = 0; y < 20; y++) {
+            bag.add(new Token("yellow"));
+        }
+        Collections.shuffle(bag);
     }
 
     public void choicePull(Player p) {
@@ -36,10 +51,6 @@ public class MainAzul{
     public ArrayList<Token> getBag(){
         return bag;
     }
-
-    public void setBag(int r){
-        bag.remove(r);
-    }
     public void nextPlayer(Player p1, Player p2, Player p3, Player p4) {
         if(p1.pTurn) {
             p2.pTurn = true;
@@ -54,6 +65,10 @@ public class MainAzul{
             p1.pTurn = true;
             p4.pTurn = false;
         }
+    }
+
+    public void fillBag() {
+
     }
 
 }

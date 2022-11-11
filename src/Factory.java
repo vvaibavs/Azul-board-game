@@ -9,15 +9,47 @@ public class Factory {
         posX = x;
         posY = y;
         main = new MainAzul();
-        factTokens = new ArrayList<Token>();
+        factTokens = new ArrayList<>();
     }
 
     public void fills() {
-        ArrayList<Token> mBag = main.getBag();
+        int blackAmt = 0;
+        int blueAmt = 0;
+        int redAmt = 0;
+        int whiteAmt = 0;
+        int yellowAmt = 0;
         for(int i = 0; i<4; i++){
-            int r = (int)(Math.random()*mBag.size());
-            factTokens.add(mBag.remove(r));
-            main.setBag(r);
+            if(MainAzul.bag.get(i).type.equals("black")) {
+                blackAmt += 1;
+                MainAzul.bag.remove(i);
+            } else if(MainAzul.bag.get(i).type.equals("blue")) {
+                blueAmt += 1;
+                MainAzul.bag.remove(i);
+            } else if(MainAzul.bag.get(i).type.equals("red")) {
+                redAmt += 1;
+                MainAzul.bag.remove(i);
+            } else if(MainAzul.bag.get(i).type.equals("white")) {
+                whiteAmt += 1;
+                MainAzul.bag.remove(i);
+            } else if(MainAzul.bag.get(i).type.equals("yellow")) {
+                yellowAmt += 1;
+                MainAzul.bag.remove(i);
+            }
+        }
+        if(blackAmt > 0) {
+            factTokens.add(new Token("black", blackAmt));
+        }
+        if(blueAmt > 0) {
+            factTokens.add(new Token("blue", blueAmt));
+        }
+        if(redAmt > 0) {
+            factTokens.add(new Token("red", redAmt));
+        }
+        if(whiteAmt > 0) {
+            factTokens.add(new Token("white", whiteAmt));
+        }
+        if(yellowAmt > 0) {
+            factTokens.add(new Token("yellow", yellowAmt));
         }
     }
     public ArrayList<Token> getTokens(){

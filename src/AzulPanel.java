@@ -30,7 +30,7 @@ public class AzulPanel extends JPanel implements MouseListener{
     public void paint(Graphics g) {
         Font font = new Font("Serif", Font.PLAIN, 52);
         g.setFont(font);
-        if(main.start) {
+        if(MainAzul.start) {
             start.drawMainMenu(g);
         } else {
             g.drawImage(background, 0, 0, getWidth(), getHeight(), null);
@@ -52,15 +52,16 @@ public class AzulPanel extends JPanel implements MouseListener{
                 g.drawString("Current Player: 4", 5 , 330); 
             }
         }
+        factory.drawTokens(g);
 
     }
     @Override
     public void mouseClicked(java.awt.event.MouseEvent e) {
-        main.mouseX = e.getX();
-        main.mouseY = e.getY();
-        System.out.println(main.mouseX + " " + main.mouseY);
-        if(main.mouseX >= 629 && main.mouseY >= 636 && main.mouseX <= 974 && main.mouseY <= 735) {
-            main.start = false;
+        MainAzul.mouseX = e.getX();
+        MainAzul.mouseY = e.getY();
+        System.out.println(MainAzul.mouseX + " " + MainAzul.mouseY);
+        if(MainAzul.mouseX >= 629 && MainAzul.mouseY >= 636 && MainAzul.mouseX <= 974 && MainAzul.mouseY <= 735) {
+            MainAzul.start = false;
         }
         repaint();
     }

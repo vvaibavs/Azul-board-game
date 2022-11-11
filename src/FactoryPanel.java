@@ -1,10 +1,8 @@
 import java.awt.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
-import java.util.Random;
 public class FactoryPanel {
     public BufferedImage factory, black, blue, red, white, yellow;
     public Factory f1, f2, f3, f4, f5, f6, f7, f8, f9;
@@ -35,6 +33,16 @@ public class FactoryPanel {
         f8 = new Factory(690, 290);
         f9 = new Factory(785, 75);
 
+        f1.fills();
+        f2.fills();
+        f3.fills();
+        f4.fills();
+        f5.fills();
+        f6.fills();
+        f7.fills();
+        f8.fills();
+        f9.fills();
+
         Factory[] fs = {f1, f2, f3, f4, f5, f6, f7, f8, f9};
         facts = fs;
     }
@@ -50,7 +58,7 @@ public class FactoryPanel {
 
     public void drawTokens(Graphics g){
         for(Factory i: facts){
-            ArrayList<Token> toks = i.getTokens();
+            ArrayList<Token> toks = i.factTokens;
         }
     }
 
