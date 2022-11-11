@@ -83,8 +83,8 @@ public class FactoryPanel {
                         g.drawString(""+t.amount(), x+65, y+180);
                     }
                     if(t.type().equals("yellow")){
-                        g.drawImage(yellow, x+140, y+135, 50, 50, null);
-                        g.drawString(""+t.amount(), x+150, y+180);
+                        g.drawImage(yellow, x+135, y+135, 50, 50, null);
+                        g.drawString(""+t.amount(), x+145, y+180);
                     }
                 }
             }
