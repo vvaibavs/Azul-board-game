@@ -52,6 +52,7 @@ public class Factory {
             factTokens.add(new Token("yellow", yellowAmt));
         }
     }
+    
     public ArrayList<Token> getTokens(){
         return factTokens;
     }

@@ -10,4 +10,11 @@ public class Token {
     public Token(String type) {
         this.type = type;
     }
+
+    public String type(){
+        return type;
+    }
+    public int amount(){
+        return amount;
+    }
 }

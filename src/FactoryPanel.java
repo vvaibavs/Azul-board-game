@@ -57,8 +57,37 @@ public class FactoryPanel {
 
 
     public void drawTokens(Graphics g){
-        for(Factory i: facts){
-            ArrayList<Token> toks = i.factTokens;
+        if(MainAzul.start == false){ 
+            Font font = new Font("Times New Roman", Font.PLAIN, 25);
+            /*Color wh = new Color(0, 0, 0);
+            g.setColor(wh);*/
+            for(Factory i: facts){
+                int x = i.getX();
+                int y = i.getY();
+                ArrayList<Token> toks = i.getTokens();
+                for(Token t: toks){
+                    if(t.type().equals("black")){
+                        g.drawImage(black, x+75, y+75, 50, 50, null);
+                        g.drawString(""+t.amount(), x+55, y+55);
+                    }
+                    if(t.type().equals("blue")){
+                        g.drawImage(blue, x+150, y+75, 50, 50, null);
+                        g.drawString(""+t.amount(), x+105, y+55);
+                    }
+                    if(t.type().equals("red")){
+                        g.drawImage(red, x+225, y+5750, 50, 50, null);
+                        g.drawString(""+t.amount(), x+210, y+55);
+                    }
+                    if(t.type().equals("white")){
+                        g.drawImage(white, x, y+150, 50, 50, null);
+                        g.drawString(""+t.amount(), x+5, y+155);
+                    }
+                    if(t.type().equals("yellow")){
+                        g.drawImage(yellow, x+100, y+150, 50, 50, null);
+                        g.drawString(""+t.amount(), x+105, y+150);
+                    }
+                }
+            }
         }
     }
 
