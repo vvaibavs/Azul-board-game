@@ -50,7 +50,7 @@ public class PlayerPanel {
          //    this.drawBoard(bufImage.createGraphics());
        // bufImage = bufImage.getSubimage(0, 350, 500, 500);
             g.drawImage(board, 0, 350, 500, 500, null);
-            g.drawImage(bufImage, 700, 350, 500, 500, null);
+            // g.drawImage(bufImage, 700, 350, 500, 500, null);
          //   g.drawImage(bufImage, 700, 350, 500, 500, null);
 
             g.drawImage(pointercounter, pointerColumn(10), pointerRow(6), 21, 21, null);
@@ -63,7 +63,7 @@ public class PlayerPanel {
          //   p12 = new LittleBoardPanel();
         // this.drawBoard(bufImage.createGraphics());
         // bufImage = bufImage.getSubimage(0, 350, 500, 500);
-            g.drawImage(bufImage, 0, 0, 500, 500, null);
+            // g.drawImage(bufImage, 0, 0, 500, 500, null);
             //g.drawImage(blue, 200, 574, 38, 38, null);
             //g.drawImage(red, 200, 531, 38, 38, null);
           //  g.drawImage(gg,700,700,200,200,null);

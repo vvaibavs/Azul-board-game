@@ -37,6 +37,7 @@ public class AzulPanel extends JPanel implements MouseListener{
             factory.drawFactories(g);
             if(player.p1.pTurn) {
                 player.drawBoard(g);
+                g.drawImage(new LittleBoardPanel().bufimg, 0, 0, 200, 200, null);
                 g.drawString("Current Player: 1", 5 , 330); 
             }
             if(player.p2.pTurn) {
