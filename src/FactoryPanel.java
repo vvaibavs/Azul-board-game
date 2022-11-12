@@ -68,23 +68,23 @@ public class FactoryPanel {
                 for(Token t: toks){
                     if(t.type().equals("black")){
                         g.drawImage(black, x+25, y+65, 50, 50, null);
-                        g.drawString(""+t.amount(), x+35, y+110);
+                        g.drawString(""+t.amount, x+35, y+110);
                     }
                     if(t.type().equals("blue")){
                         g.drawImage(blue, x+90, y+25, 50, 50, null);
-                        g.drawString(""+t.amount(), x+100, y+70);
+                        g.drawString(""+t.amount, x+100, y+70);
                     }
                     if(t.type().equals("red")){
                         g.drawImage(red, x+155, y+65, 50, 50, null);
-                        g.drawString(""+t.amount(), x+165, y+110);
+                        g.drawString(""+t.amount, x+165, y+110);
                     }
                     if(t.type().equals("white")){
                         g.drawImage(white, x+55, y+135, 50, 50, null);
-                        g.drawString(""+t.amount(), x+65, y+180);
+                        g.drawString(""+t.amount, x+65, y+180);
                     }
                     if(t.type().equals("yellow")){
                         g.drawImage(yellow, x+135, y+135, 50, 50, null);
-                        g.drawString(""+t.amount(), x+145, y+180);
+                        g.drawString(""+t.amount, x+145, y+180);
                     }
                 }
             }
