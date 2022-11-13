@@ -30,16 +30,11 @@ public class PlayerPanel {
         } catch(Exception e) {
 
         }
+        MainAzul.cnt+=1;
     }
 
     public void drawBoard(Graphics g) {
         if(p1.pTurn) {
-
-            //   p12.drawBoard(g);
-             //   player1board = p12.getImage();
-             //   g.drawImage(player1board, 700, 350, 500, 500, null);
-         //    this.drawBoard(bufImage.createGraphics());
-       // bufImage = bufImage.getSubimage(0, 350, 500, 500);
             g.drawImage(board, 0, 350, 500, 500, null);
             // g.drawImage(bufImage, 700, 350, 500, 500, null);
          //   g.drawImage(bufImage, 700, 350, 500, 500, null);
@@ -59,7 +54,20 @@ public class PlayerPanel {
             //g.drawImage(red, 200, 531, 38, 38, null);
           //  g.drawImage(gg,700,700,200,200,null);
             
+        } else if(p2.pTurn) {
+            g.drawImage(board, 0, 350, 500, 500, null);
+            g.drawImage(blue, boardColumn(4), boardRow(5), 38, 38, null);
+        } else if(p3.pTurn) {
+            g.drawImage(board, 0, 350, 500, 500, null);
+            g.drawImage(black, boardColumn(4), boardRow(5), 38, 38, null);
+        } else if(p4.pTurn) {
+            g.drawImage(board, 0, 350, 500, 500, null);
+            g.drawImage(red, boardColumn(4), boardRow(5), 38, 38, null);
         }
+    }
+
+    public void drawTokens() {
+        
     }
 
     

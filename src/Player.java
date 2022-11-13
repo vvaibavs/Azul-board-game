@@ -10,6 +10,7 @@ public class Player {
 
     public Player() {
         pTurn = false;
+        temp = new ArrayList<>();
     }
 
     public boolean moveTokens() {
