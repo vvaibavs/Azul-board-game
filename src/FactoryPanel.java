@@ -129,17 +129,21 @@ public class FactoryPanel {
             }
         }
         g.drawImage(black, 1000, 400, 50, 50, null);
-        g.drawString(""+ba, 1010, 435);
+        Color whi = new Color(255, 255, 255);
+        g.setColor(whi);
+        g.drawString(""+ba, 1010, 440);
+        Color bl = new Color(0, 0, 0);
+        g.setColor(bl);
         g.drawImage(blue, 1050, 400, 50, 50, null);
-        g.drawString(""+ba, 1060, 435);
+        g.drawString(""+ba, 1060, 440);
         g.drawImage(red, 1100, 400, 50, 50, null);
-        g.drawString(""+ba, 1110, 435);
+        g.drawString(""+ba, 1110, 440);
         g.drawImage(white, 1150, 400, 50, 50, null);
-        g.drawString(""+ba, 1160, 435);
+        g.drawString(""+ba, 1160, 445);
         g.drawImage(yellow, 1200, 400, 50, 50, null);
-        g.drawString(""+ba, 1210, 435);
+        g.drawString(""+ba, 1210, 445);
         if(first){
-            g.drawImage(firstT, 1100, 445, 50, 50, null);
+            g.drawImage(firstT, 1100, 460, 50, 50, null);
         }
     }
 }
