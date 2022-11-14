@@ -4,7 +4,7 @@ import javax.imageio.ImageIO;
 import java.io.*;
 import java.util.ArrayList;
 public class FactoryPanel {
-    public BufferedImage factory, black, blue, red, white, yellow;
+    public BufferedImage factory, black, blue, red, white, yellow, firstT;
     public Factory f1, f2, f3, f4, f5, f6, f7, f8, f9;
     public ArrayList<Token> center;
     public Factory[] facts;
@@ -16,6 +16,7 @@ public class FactoryPanel {
             red = ImageIO.read(new File("assets/red.jpg"));
             white = ImageIO.read(new File("assets/white.jpg"));
             yellow = ImageIO.read(new File("assets/yellow.jpg"));
+            firstT = ImageIO.read(new File("assets/1tile.jpg"));
         } catch (IOException e) {
             // TODO Auto-generated catch block
             e.printStackTrace();
@@ -137,9 +138,8 @@ public class FactoryPanel {
         g.drawString(""+ba, 1160, 735);
         g.drawImage(yellow, 1200, 700, 50, 50, null);
         g.drawString(""+ba, 1210, 735);
-        /*.draw();
-        g.draw();
-        g.draw();
-        g.draw();*/
+        if(first){
+            g.drawImage(firstT, 1100, 745, 50, 50, null);
+        }
     }
 }

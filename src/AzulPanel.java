@@ -29,13 +29,14 @@ public class AzulPanel extends JPanel implements MouseListener{
         addMouseListener(this);
     }
     public void paint(Graphics g) {
-        Font font = new Font("Serif", Font.PLAIN, 52);
+        Font font = new Font("Serif", Font.PLAIN, 52);  
         g.setFont(font);
         if(MainAzul.start) {
             start.drawMainMenu(g);
         } else {
             g.drawImage(background, 0, 0, getWidth(), getHeight(), null);
             factory.drawFactories(g);
+            factory.drawCenter(g);
             if(player.p1.pTurn) {
                 player.drawBoard(g);
                 
