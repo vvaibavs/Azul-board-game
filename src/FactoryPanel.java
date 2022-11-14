@@ -93,8 +93,8 @@ public class FactoryPanel {
                         g.drawString(""+t.amount, x+65, y+180);
                     }
                     if(t.type().equals("yellow")){
-                        g.drawImage(yellow, x+135, y+135, 50, 50, null);
-                        g.drawString(""+t.amount, x+145, y+180);
+                        g.drawImage(yellow, x+125, y+135, 50, 50, null);
+                        g.drawString(""+t.amount, x+135, y+180);
                     }
                 }
             }
@@ -128,18 +128,18 @@ public class FactoryPanel {
                 first = true;
             }
         }
-        g.drawImage(black, 1000, 700, 50, 50, null);
-        g.drawString(""+ba, 1010, 735);
-        g.drawImage(blue, 1050, 700, 50, 50, null);
-        g.drawString(""+ba, 1060, 735);
-        g.drawImage(red, 1100, 700, 50, 50, null);
-        g.drawString(""+ba, 1110, 735);
-        g.drawImage(white, 1150, 700, 50, 50, null);
-        g.drawString(""+ba, 1160, 735);
-        g.drawImage(yellow, 1200, 700, 50, 50, null);
-        g.drawString(""+ba, 1210, 735);
+        g.drawImage(black, 1000, 400, 50, 50, null);
+        g.drawString(""+ba, 1010, 435);
+        g.drawImage(blue, 1050, 400, 50, 50, null);
+        g.drawString(""+ba, 1060, 435);
+        g.drawImage(red, 1100, 400, 50, 50, null);
+        g.drawString(""+ba, 1110, 435);
+        g.drawImage(white, 1150, 400, 50, 50, null);
+        g.drawString(""+ba, 1160, 435);
+        g.drawImage(yellow, 1200, 400, 50, 50, null);
+        g.drawString(""+ba, 1210, 435);
         if(first){
-            g.drawImage(firstT, 1100, 745, 50, 50, null);
+            g.drawImage(firstT, 1100, 445, 50, 50, null);
         }
     }
 }
