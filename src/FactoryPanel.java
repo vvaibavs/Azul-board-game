@@ -129,6 +129,14 @@ public class FactoryPanel {
         }
         g.drawImage(black, 1000, 700, 50, 50, null);
         g.drawString(""+ba, 1010, 735);
+        g.drawImage(blue, 1050, 700, 50, 50, null);
+        g.drawString(""+ba, 1060, 735);
+        g.drawImage(red, 1100, 700, 50, 50, null);
+        g.drawString(""+ba, 1110, 735);
+        g.drawImage(white, 1150, 700, 50, 50, null);
+        g.drawString(""+ba, 1160, 735);
+        g.drawImage(yellow, 1200, 700, 50, 50, null);
+        g.drawString(""+ba, 1210, 735);
         /*.draw();
         g.draw();
         g.draw();
