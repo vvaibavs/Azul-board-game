@@ -5,7 +5,7 @@ import java.io.*;
 import java.util.ArrayList;
 public class FactoryPanel {
     public BufferedImage factory, black, blue, red, white, yellow, firstT;
-    public Factory f1, f2, f3, f4, f5, f6, f7, f8, f9;
+    public Factory f1, f2, f3, f4, f5, f6, f7, f8, f9, cent;
     public ArrayList<Token> center;
     public Factory[] facts;
     public FactoryPanel(){
@@ -28,7 +28,8 @@ public class FactoryPanel {
         f3 = new Factory(1360, 290);
         f4 = new Factory(1330, 520);
         f5 = new Factory(1130, 650);
-
+        cent = new Factory(1100, 440);
+        cent.center(center);
         f6 = new Factory(900, 650);
         f7 = new Factory(710, 520);
         f8 = new Factory(690, 290);
@@ -102,7 +103,7 @@ public class FactoryPanel {
     }
 
     public void drawCenter(Graphics g){
-        int ba = 0;
+        /*int ba = 0;
         int bu = 0;
         int r = 0;
         int w = 0; 
@@ -139,11 +140,11 @@ public class FactoryPanel {
         g.drawImage(red, 1100, 400, 50, 50, null);
         g.drawString(""+ba, 1110, 440);
         g.drawImage(white, 1150, 400, 50, 50, null);
-        g.drawString(""+ba, 1160, 445);
+        g.drawString(""+ba, 1160, 440);
         g.drawImage(yellow, 1200, 400, 50, 50, null);
-        g.drawString(""+ba, 1210, 445);
+        g.drawString(""+ba, 1210, 440);
         if(first){
             g.drawImage(firstT, 1100, 460, 50, 50, null);
-        }
+        }*/
     }
 }

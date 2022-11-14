@@ -53,6 +53,42 @@ public class Factory {
         }
     }
     
+    public void center(ArrayList<Token> a){
+        factTokens.clear();
+        int blackAmt = 0;
+        int blueAmt = 0;
+        int redAmt = 0;
+        int whiteAmt = 0;
+        int yellowAmt = 0;
+        for(Token i:a){
+            if(i.type.equals("black")) {
+                blackAmt++;
+            } else if(i.type.equals("blue")) {
+                blueAmt++;
+            } else if(i.type.equals("red")) {
+                redAmt++;
+            } else if(i.type.equals("white")) {
+                whiteAmt++;
+            } else if(i.type.equals("yellow")) {
+                yellowAmt++;
+            }
+        }
+        if(blackAmt > 0) {
+            factTokens.add(new Token("black", blackAmt));
+        }
+        if(blueAmt > 0) {
+            factTokens.add(new Token("blue", blueAmt));
+        }
+        if(redAmt > 0) {
+            factTokens.add(new Token("red", redAmt));
+        }
+        if(whiteAmt > 0) {
+            factTokens.add(new Token("white", whiteAmt));
+        }
+        if(yellowAmt > 0) {
+            factTokens.add(new Token("yellow", yellowAmt));
+        }
+    }
     public ArrayList<Token> getTokens(){
         return factTokens;
     }
