@@ -67,23 +67,28 @@ public class FactoryPanel {
                 ArrayList<Token> toks = i.getTokens();
                 for(Token t: toks){
                     if(t.type().equals("black")){
-                        g.drawImage(black, x+25, y+65, 50, 50, null);
+                        g.setColor(Color.WHITE);
+                        g.drawImage(black, x+345, y+65, 50, 50, null);
                         g.drawString(""+t.amount, x+35, y+110);
                     }
                     if(t.type().equals("blue")){
-                        g.drawImage(blue, x+90, y+25, 50, 50, null);
+                        g.setColor(Color.BLACK);
+                        g.drawImage(blue, x+410, y+25, 50, 50, null);
                         g.drawString(""+t.amount, x+100, y+70);
                     }
                     if(t.type().equals("red")){
-                        g.drawImage(red, x+155, y+65, 50, 50, null);
+                        g.setColor(Color.BLACK);
+                        g.drawImage(red, x+475, y+65, 50, 50, null);
                         g.drawString(""+t.amount, x+165, y+110);
                     }
                     if(t.type().equals("white")){
-                        g.drawImage(white, x+55, y+135, 50, 50, null);
+                        g.setColor(Color.BLACK);
+                        g.drawImage(white, x+380, y+135, 50, 50, null);
                         g.drawString(""+t.amount, x+65, y+180);
                     }
                     if(t.type().equals("yellow")){
-                        g.drawImage(yellow, x+135, y+135, 50, 50, null);
+                        g.setColor(Color.BLACK);
+                        g.drawImage(yellow, x+460, y+135, 50, 50, null);
                         g.drawString(""+t.amount, x+145, y+180);
                     }
                 }

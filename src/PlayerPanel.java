@@ -8,7 +8,9 @@ public class PlayerPanel {
     public Player p1, p2, p3, p4;
     private BufferedImage board,red,yellow,white,black,blue,onetile,pointercounter,xtile,gg;
     public int width, height;
+    public double scaler;
     public PlayerPanel() {
+        scaler = 2.22222222222222222222222222222;
         p1 = new Player();
         p2 = new Player();
         p3 = new Player();
@@ -35,6 +37,9 @@ public class PlayerPanel {
 
     public void drawBoard(Graphics g) {
         if(p1.pTurn) {
+            g.drawImage(board, 0, 0, 225, 225, null); 
+            g.drawImage(board, 230, 0, 225, 225, null); 
+            g.drawImage(board, 460, 0, 225, 225, null); 
             g.drawImage(board, 0, 350, 500, 500, null);
             // g.drawImage(bufImage, 700, 350, 500, 500, null);
          //   g.drawImage(bufImage, 700, 350, 500, 500, null);
