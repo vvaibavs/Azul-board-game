@@ -45,6 +45,10 @@ public class FactoryPanel {
 
         Factory[] fs = {f1, f2, f3, f4, f5, f6, f7, f8, f9};
         facts = fs;
+        Token t = new Token("black");
+        center.add(t);
+        center.add(t);
+        center.add(t);
     }
 
     public void drawFactories(Graphics g){
@@ -55,20 +59,25 @@ public class FactoryPanel {
         }
     }
 
+    public void addCenter(Token t){
+        center.add(t);
+    }
 
     public void drawTokens(Graphics g){
         if(MainAzul.start == false){ 
             Font font = new Font("Times New Roman", Font.PLAIN, 25);
-            /*Color wh = new Color(0, 0, 0);
-            g.setColor(wh);*/
             for(Factory i: facts){
                 int x = i.getX();
                 int y = i.getY();
+                Color bClr = new Color(0, 0, 0);
+                Color wClr = new Color(255, 255, 255);
                 ArrayList<Token> toks = i.getTokens();
                 for(Token t: toks){
                     if(t.type().equals("black")){
                         g.drawImage(black, x+25, y+65, 50, 50, null);
+                        g.setColor(wClr);
                         g.drawString(""+t.amount, x+35, y+110);
+                        g.setColor(bClr);
                     }
                     if(t.type().equals("blue")){
                         g.drawImage(blue, x+90, y+25, 50, 50, null);
@@ -92,6 +101,37 @@ public class FactoryPanel {
     }
 
     public void drawCenter(Graphics g){
-
+        int ba = 0;
+        int bu = 0;
+        int r = 0;
+        int w = 0; 
+        int y = 0;
+        boolean first = false;
+        for(Token t: center){
+            if(t.type().equals("black")){
+                ba++;
+            }
+            if(t.type().equals("blue")){
+                bu++;
+            }
+            if(t.type().equals("red")){
+                r++;
+            }
+            if(t.type().equals("white")){
+                w++;
+            }
+            if(t.type().equals("yellow")){
+                y++;
+            }
+            if(t.type().equals("first")){
+                first = true;
+            }
+        }
+        g.drawImage(black, 1000, 700, 50, 50, null);
+        g.drawString(""+ba, 1010, 735);
+        /*.draw();
+        g.draw();
+        g.draw();
+        g.draw();*/
     }
 }
