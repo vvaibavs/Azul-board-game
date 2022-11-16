@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.io.*;
 public class PlayerPanel {
     public Player p1, p2, p3, p4;
-    private BufferedImage board,red,yellow,white,black,blue,onetile,pointercounter,xtile,gg;
+    private BufferedImage board,red,yellow,white,black,blue,onetile,pointercounter,xtile;
     public int width, height;
     public PlayerPanel() {
         p1 = new Player();
@@ -17,7 +17,6 @@ public class PlayerPanel {
         height = 0;
         p1.pTurn = true;
         try {
-            gg = ImageIO.read(new File("assets/Final azul board.jpg"));
             board = ImageIO.read(new File("assets/Final azul board.jpg"));
             yellow = ImageIO.read(new File("assets/yellow.jpg"));
             red = ImageIO.read(new File("assets/red.jpg"));
@@ -35,24 +34,10 @@ public class PlayerPanel {
 
     public void drawBoard(Graphics g) {
         if(p1.pTurn) {
-            g.drawImage(board, 0, 350, 500, 500, null);
-            // g.drawImage(bufImage, 700, 350, 500, 500, null);
-         //   g.drawImage(bufImage, 700, 350, 500, 500, null);
-
-            g.drawImage(pointercounter, pointerColumn(10), pointerRow(6), 21, 21, null);
-            //g.drawImage(onetile, 200, 574, 38, 38, null);
-            //g.drawImage(black, 200, 574, 38, 38, null);
-           // g.drawImage(white, 200, 660, 38, 38, null);
+           g.drawImage(board, 0, 350, 500, 500, null);
+           g.drawImage(pointercounter, pointerColumn(10), pointerRow(6), 21, 21, null);
            g.drawImage(xtile, boardcolorColumn(3), boardRow(4), 40, 40, null);
-            g.drawImage(yellow, boardColumn(4), boardRow(5), 38, 38, null);
-           // g.drawImage(bufImage, 0, 0, 500, 500, null);
-         //   p12 = new LittleBoardPanel();
-        // this.drawBoard(bufImage.createGraphics());
-        // bufImage = bufImage.getSubimage(0, 350, 500, 500);
-            // g.drawImage(bufImage, 0, 0, 500, 500, null);
-            //g.drawImage(blue, 200, 574, 38, 38, null);
-            //g.drawImage(red, 200, 531, 38, 38, null);
-          //  g.drawImage(gg,700,700,200,200,null);
+           g.drawImage(yellow, boardColumn(4), boardRow(5), 38, 38, null);
             
         } else if(p2.pTurn) {
             g.drawImage(board, 0, 350, 500, 500, null);
