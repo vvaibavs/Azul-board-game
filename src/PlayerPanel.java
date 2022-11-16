@@ -8,7 +8,6 @@ public class PlayerPanel {
     public Player p1, p2, p3, p4;
     private BufferedImage board,red,yellow,white,black,blue,onetile,pointercounter,xtile,gg;
     public int width, height;
-    public int tRow, tCol;
     public PlayerPanel() {
         p1 = new Player();
         p2 = new Player();
@@ -40,11 +39,7 @@ public class PlayerPanel {
             // g.drawImage(bufImage, 700, 350, 500, 500, null);
          //   g.drawImage(bufImage, 700, 350, 500, 500, null);
 
-            int score = p1.calcPoints(); //Point counter position thing
-            int tRow = score % 20 + 5;
-            int tCol = score/20 + 2;
-
-            g.drawImage(pointercounter, pointerColumn(tCol), pointerRow(tRow), 21, 21, null);
+            g.drawImage(pointercounter, pointerColumn(10), pointerRow(6), 21, 21, null);
             //g.drawImage(onetile, 200, 574, 38, 38, null);
             //g.drawImage(black, 200, 574, 38, 38, null);
            // g.drawImage(white, 200, 660, 38, 38, null);
