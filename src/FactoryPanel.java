@@ -103,7 +103,7 @@ public class FactoryPanel {
     }
 
     public void drawCenter(Graphics g){
-        /*int ba = 0;
+        int ba = 0;
         int bu = 0;
         int r = 0;
         int w = 0; 
@@ -145,6 +145,6 @@ public class FactoryPanel {
         g.drawString(""+ba, 1210, 440);
         if(first){
             g.drawImage(firstT, 1100, 460, 50, 50, null);
-        }*/
+        }
     }
 }
