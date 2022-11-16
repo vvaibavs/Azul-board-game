@@ -92,7 +92,7 @@ public class AzulPanel extends JPanel implements MouseListener{
         System.out.println(MainAzul.mouseX + " " + MainAzul.mouseY);
         if(MainAzul.mouseX >= 629 && MainAzul.mouseY >= 636 && MainAzul.mouseX <= 974 && MainAzul.mouseY <= 735) {
             MainAzul.start = false;
-        } else if(MainAzul.mouseX >= 1500 && MainAzul.mouseY >= 800 && MainAzul.mouseX <= 1600 && MainAzul.mouseY <= 900) {
+        } else if(MainAzul.mouseX >= 1477 && MainAzul.mouseY >= 763 && MainAzul.mouseX <= 1600 && MainAzul.mouseY <= 900) {
             MainAzul.nextPlayer(player.p1, player.p2, player.p3, player.p4);
         } else if(!MainAzul.start && MainAzul.tempFact == null && MainAzul.mouseX >= 1020 && MainAzul.mouseY >= 0 && MainAzul.mouseX <= 1240 && MainAzul.mouseY <= 220) {
             MainAzul.tempFact = factory.f1;

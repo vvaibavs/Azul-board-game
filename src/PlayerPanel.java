@@ -6,7 +6,7 @@ import javax.swing.*;
 import java.io.*;
 public class PlayerPanel {
     public Player p1, p2, p3, p4;
-    private BufferedImage board,red,yellow,white,black,blue,onetile,pointercounter,xtile;
+    private BufferedImage board,red,yellow,white,black,blue,onetile,pointercounter,xtile,next;
     public int width, height;
     public PlayerPanel() {
         p1 = new Player();
@@ -26,6 +26,7 @@ public class PlayerPanel {
             onetile = ImageIO.read(new File("assets/1tile.jpg"));
             pointercounter = ImageIO.read(new File("assets/pointer counter.jpg"));
             xtile = ImageIO.read(new File("assets/x.png"));
+            next = ImageIO.read(new File("assets/next.png"));
         } catch(Exception e) {
 
         }
@@ -33,6 +34,7 @@ public class PlayerPanel {
     }
 
     public void drawBoard(Graphics g) {
+        g.drawImage(next, 1483, 760, 100, 100, null);
         if(p1.pTurn) {
            g.drawImage(board, 0, 350, 500, 500, null);
            g.drawImage(pointercounter, pointerColumn(10), pointerRow(6), 21, 21, null);

@@ -8,3 +8,6 @@ Container c = getContentPane();
 BufferedImage im = new BufferedImage(c.getWidth(), c.getHeight(), BufferedImage.TYPE_INT_ARGB);
 c.paint(im.getGraphics());
 ImageIO.write(im, "PNG", new File("shot.png"));
+1500,800
+100,100
+1477 763
