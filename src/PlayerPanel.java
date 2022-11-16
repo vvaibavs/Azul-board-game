@@ -1,139 +1,115 @@
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.*;
-import java.awt.event.MouseListener; 
-public class AzulPanel extends JPanel implements MouseListener{
-    public StartPanel start;
-    public PlayerPanel player;
-    public FactoryPanel factory;
-    public MainAzul main;
-    public LittleBoardPanel little1, little2, little3, little4;
-    private BufferedImage background;
-    public AzulPanel() {
-
-        start = new StartPanel();
-        player = new PlayerPanel();
-        factory = new FactoryPanel();
+public class PlayerPanel {
+    public Player p1, p2, p3, p4;
+    private BufferedImage board,red,yellow,white,black,blue,onetile,pointercounter,xtile,gg;
+    public int width, height;
+    public PlayerPanel() {
+        p1 = new Player();
+        p2 = new Player();
+        p3 = new Player();
+        p4 = new Player();
+        width = 0;
+        height = 0;
+        p1.pTurn = true;
         try {
-            background = ImageIO.read(new File("assets/background.jpg"));
-        } catch (Exception e) {
-            System.out.println("failure");
-        }
-        player.height = getHeight();
-        player.width = getWidth();
-        main = new MainAzul();
-        addMouseListener(this);
-    }
-    public void paint(Graphics g) {
-        Font font = new Font("Serif", Font.PLAIN, 52);  
-        g.setFont(font);
-        if(MainAzul.start) {
-            start.drawMainMenu(g);
-        } else {
-            g.drawImage(background, 0, 0, getWidth(), getHeight(), null);
-            factory.drawFactories(g);
-            factory.drawCenter(g);
-            if(player.p1.pTurn) {
-                player.drawBoard(g);
-                
-                g.drawString("Current Player: 1", 5 , 330); 
-                if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0, 40);
-                    main.choicePull(player.p1);
-                }
+            gg = ImageIO.read(new File("assets/Final azul board.jpg"));
+            board = ImageIO.read(new File("assets/Final azul board.jpg"));
+            yellow = ImageIO.read(new File("assets/yellow.jpg"));
+            red = ImageIO.read(new File("assets/red.jpg"));
+            white = ImageIO.read(new File("assets/white.jpg"));
+            black = ImageIO.read(new File("assets/black.jpg"));
+            blue = ImageIO.read(new File("assets/blue.jpg"));
+            onetile = ImageIO.read(new File("assets/1tile.jpg"));
+            pointercounter = ImageIO.read(new File("assets/pointer counter.jpg"));
+            xtile = ImageIO.read(new File("assets/x.png"));
+        } catch(Exception e) {
 
-            }
-            if(player.p2.pTurn) {
-                player.drawBoard(g); 
-                
-                g.drawString("Current Player: 2", 5 , 330); 
-                if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0, 40);
-                    main.choicePull(player.p2);
-                }
-            }
-            if(player.p3.pTurn) {
-                player.drawBoard(g);
-                
-                g.drawString("Current Player: 3", 5 , 330); 
-                if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0, 40);
-                    main.choicePull(player.p3);
-                }
-            }
-            if(player.p4.pTurn) {
-                player.drawBoard(g);
-                g.drawString("Current Player: 4", 5 , 330); 
-                if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0, 40);
-                    main.choicePull(player.p4);
-                }
-            }
         }
-        factory.drawTokens(g);
-
+        MainAzul.cnt+=1;
     }
-    @Override
-    public void mouseClicked(java.awt.event.MouseEvent e) {
-        MainAzul.mouseX = e.getX();
-        MainAzul.mouseY = e.getY();
-        System.out.println(MainAzul.mouseX + " " + MainAzul.mouseY);
-        if(MainAzul.mouseX >= 629 && MainAzul.mouseY >= 636 && MainAzul.mouseX <= 974 && MainAzul.mouseY <= 735) {
-            MainAzul.start = false;
-        } else if(MainAzul.mouseX >= 1500 && MainAzul.mouseY >= 800 && MainAzul.mouseX <= 1600 && MainAzul.mouseY <= 900) {
-            MainAzul.nextPlayer(player.p1, player.p2, player.p3, player.p4);
-        } else if(!MainAzul.start && MainAzul.tempFact == null && MainAzul.mouseX >= 1020 && MainAzul.mouseY >= 0 && MainAzul.mouseX <= 1240 && MainAzul.mouseY <= 220) {
-            MainAzul.tempFact = factory.f1;
-            System.out.println("f1");
-        } else if(!MainAzul.start && MainAzul.tempFact == null && MainAzul.mouseX >= 1255 && MainAzul.mouseY >= 75 && MainAzul.mouseX <= 1475 && MainAzul.mouseY <= 295) {
-            System.out.println("f2");
-            MainAzul.tempFact = factory.f2;
-        } else if(!MainAzul.start && MainAzul.tempFact == null && MainAzul.mouseX >= 1360 && MainAzul.mouseY >= 290 && MainAzul.mouseX <= 1360 + 220 && MainAzul.mouseY <= 510) {
-            System.out.println("f3");
-            MainAzul.tempFact = factory.f3;
-        } else if(!MainAzul.start && MainAzul.tempFact == null && MainAzul.mouseX >= 1330 && MainAzul.mouseY >= 520 && MainAzul.mouseX <= 1330 + 220 && MainAzul.mouseY <= 520 + 220) {
-            System.out.println("f4");
-            MainAzul.tempFact = factory.f4;
-        } else if(!MainAzul.start && MainAzul.tempFact == null && MainAzul.mouseX >= 1130 && MainAzul.mouseY >= 650 && MainAzul.mouseX <= 1130 + 220 && MainAzul.mouseY <= 650 + 220) {
-            System.out.println("f5");
-            MainAzul.tempFact = factory.f5;
-        } else if(!MainAzul.start && MainAzul.tempFact == null && MainAzul.mouseX >= 900 && MainAzul.mouseY >= 650 && MainAzul.mouseX <= 900 + 220 && MainAzul.mouseY <= 650 + 220) {
-            System.out.println("f6");
-            MainAzul.tempFact = factory.f6;
-        } else if(!MainAzul.start && MainAzul.tempFact == null && MainAzul.mouseX >= 710 && MainAzul.mouseY >= 520 && MainAzul.mouseX <= 710 + 220 && MainAzul.mouseY <= 520 + 220) {
-            System.out.println("f7");
-            MainAzul.tempFact = factory.f7;
-        } else if(!MainAzul.start && MainAzul.tempFact == null && MainAzul.mouseX >= 690 && MainAzul.mouseY >= 290 && MainAzul.mouseX <= 690 + 220 && MainAzul.mouseY <= 290 + 220) {
-            System.out.println("f8");
-            MainAzul.tempFact = factory.f8;
-        } else if(!MainAzul.start && MainAzul.tempFact == null && MainAzul.mouseX >= 785 && MainAzul.mouseY >= 75 && MainAzul.mouseX <= 785 + 220 && MainAzul.mouseY <= 75 + 220) {
-            System.out.println("f9");
-            MainAzul.tempFact = factory.f9;
+
+    public void drawBoard(Graphics g) {
+        if(p1.pTurn) {
+            g.drawImage(board, 0, 350, 500, 500, null);
+            // g.drawImage(bufImage, 700, 350, 500, 500, null);
+         //   g.drawImage(bufImage, 700, 350, 500, 500, null);
+
+            g.drawImage(pointercounter, pointerColumn(10), pointerRow(6), 21, 21, null);
+            //g.drawImage(onetile, 200, 574, 38, 38, null);
+            //g.drawImage(black, 200, 574, 38, 38, null);
+           // g.drawImage(white, 200, 660, 38, 38, null);
+           g.drawImage(xtile, boardcolorColumn(3), boardRow(4), 40, 40, null);
+            g.drawImage(yellow, boardColumn(4), boardRow(5), 38, 38, null);
+           // g.drawImage(bufImage, 0, 0, 500, 500, null);
+         //   p12 = new LittleBoardPanel();
+        // this.drawBoard(bufImage.createGraphics());
+        // bufImage = bufImage.getSubimage(0, 350, 500, 500);
+            // g.drawImage(bufImage, 0, 0, 500, 500, null);
+            //g.drawImage(blue, 200, 574, 38, 38, null);
+            //g.drawImage(red, 200, 531, 38, 38, null);
+          //  g.drawImage(gg,700,700,200,200,null);
+            
+        } else if(p2.pTurn) {
+            g.drawImage(board, 0, 350, 500, 500, null);
+            g.drawImage(blue, boardColumn(4), boardRow(5), 38, 38, null);
+        } else if(p3.pTurn) {
+            g.drawImage(board, 0, 350, 500, 500, null);
+            g.drawImage(black, boardColumn(4), boardRow(5), 38, 38, null);
+        } else if(p4.pTurn) {
+            g.drawImage(board, 0, 350, 500, 500, null);
+            g.drawImage(red, boardColumn(4), boardRow(5), 38, 38, null);
+        }
+    }
+
+    public void drawTokens() {
+        
+    }
+
+    
+
+    public int boardRow(int x) {
+        if(x == 1) {
+            return 531;
         } 
-        repaint();
+        return ((x - 1) * 43) + 531;
     }
-    @Override
-    public void mousePressed(java.awt.event.MouseEvent e) {
-        // TODO Auto-generated method stub
-        
+    public int boardColumn(int x) {
+        if(x == 1) {
+            return 200;
+        } 
+        return 200 - ((x - 1) * 43);
     }
-    @Override
-    public void mouseReleased(java.awt.event.MouseEvent e) {
-        // TODO Auto-generated method stub
-        
+
+    public int pointerRow(int x) {
+        if(x == 1) {
+            return 358;
+        } 
+        return ((x - 1) * 27) + 358;
     }
-    @Override
-    public void mouseEntered(java.awt.event.MouseEvent e) {
-        // TODO Auto-generated method stub
-        
+    public int boardcolorColumn(int x) {
+        if(x == 1) {
+            return 263;
+        } 
+        return ((x - 1) * 43) + 263;
     }
-    @Override
-    public void mouseExited(java.awt.event.MouseEvent e) {
-        // TODO Auto-generated method stub
-        
+    public int pointerColumn(int x) {
+        if(x == 1) {
+            return 30;
+        }
+        if(x >= 2 && x <= 5) {
+            return 30 + ((x - 1) * 22);
+        }
+        if(x >= 6 && x <= 10) {
+            return 31 + ((x - 1) * 22);
+        }
+        if(x >= 11 && x <= 15) {
+            return 32 + ((x - 1) * 22);
+        }
+            return 33 + ((x - 1) * 22);
     }
 }
