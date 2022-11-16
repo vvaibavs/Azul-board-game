@@ -42,9 +42,11 @@ public class AzulPanel extends JPanel implements MouseListener{
                 
                 g.drawString("Current Player: 1", 5 , 330); 
                 if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0, 40);
+                    g.drawString("pick tokens", 0,  280);
                     main.choicePull(player.p1);
-                }
+                } //else { 
+                 //   g.drawString("pick factory", 0,  280);
+              //  }
 
             }
             if(player.p2.pTurn) {
@@ -52,26 +54,32 @@ public class AzulPanel extends JPanel implements MouseListener{
                 
                 g.drawString("Current Player: 2", 5 , 330); 
                 if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0, 40);
+                    g.drawString("pick tokens", 0,  280);
                     main.choicePull(player.p2);
-                }
+                }/// else { 
+                //    g.drawString("pick factory", 0,  280);
+               // }
             }
             if(player.p3.pTurn) {
                 player.drawBoard(g);
                 
                 g.drawString("Current Player: 3", 5 , 330); 
                 if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0, 40);
+                    g.drawString("pick tokens", 0,  280);
                     main.choicePull(player.p3);
-                }
+                } //else { 
+                  //  g.drawString("pick factory", 0,  280);
+               // }
             }
             if(player.p4.pTurn) {
                 player.drawBoard(g);
                 g.drawString("Current Player: 4", 5 , 330); 
                 if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0, 40);
+                    g.drawString("pick tokens", 0,  280);
                     main.choicePull(player.p4);
-                }
+                } //else { 
+               //     g.drawString("pick factory", 0,  280);
+               // }
             }
         }
         factory.drawTokens(g);
