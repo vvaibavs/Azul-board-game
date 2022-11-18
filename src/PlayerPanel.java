@@ -34,6 +34,19 @@ public class PlayerPanel {
     }
 
     public void drawBoard(Graphics g) {
+        Font font = new Font("Dialog", Font.PLAIN, 52);  
+        Font fontbig = new Font("Serif", Font.PLAIN, 52);  
+        g.setFont(font);
+        g.drawString("7", 925,550);
+        g.drawString("8", 925,415);
+        g.drawString("9", 989,307);
+        g.drawString("1", 1120,268);
+        g.drawString("2", 1260,322);
+        g.drawString("3", 1330,440);
+        g.drawString("4", 1301,571);
+        g.drawString("5", 1195,638);
+        g.drawString("6", 1025 ,640);
+        g.setFont(fontbig);
         if(p1.pTurn) {
             g.drawImage(board, 0, 350, 500, 500, null);
             // g.drawImage(bufImage, 700, 350, 500, 500, null);
