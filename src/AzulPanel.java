@@ -58,7 +58,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 
                 g.drawString("Current Player: 1", 5 , 330); 
                 if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0,  280);
+                    g.drawString("pick tokens in selected factory", 0,  280);
                     int x = MainAzul.tempFact.getX();
                     int y = MainAzul.tempFact.getY();
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
@@ -116,7 +116,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
                 g.drawString("Current Player: 2", 5 , 330); 
                 if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0,  280);
+                    g.drawString("pick tokens in selected factory", 0,  280);
                     int x = MainAzul.tempFact.getX();
                     int y = MainAzul.tempFact.getY();
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
@@ -172,7 +172,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 
                 g.drawString("Current Player: 3", 5 , 330); 
                 if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0,  280);
+                    g.drawString("pick tokens in selected factory", 0,  280);
                     int x = MainAzul.tempFact.getX();
                     int y = MainAzul.tempFact.getY();
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
@@ -229,7 +229,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
                 g.drawString("Current Player: 4", 5 , 330); 
                 if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens", 0,  280);
+                    g.drawString("pick tokens in selected factory", 0,  280);
                     int x = MainAzul.tempFact.getX();
                     int y = MainAzul.tempFact.getY();
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
