@@ -37,8 +37,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
         addKeyListener(this);
     }
     public void paint(Graphics g) {
-        Font font = new Font("Serif", Font.PLAIN, 52);  
-        g.setFont(font);
+        Font fontbig = new Font("Serif", Font.PLAIN, 52);  
+        Font fontsmall = new Font("Serif", Font.PLAIN, 32);  
+        g.setFont(fontbig);
         if(MainAzul.start) {
             start.drawMainMenu(g);
         } else {
@@ -73,7 +74,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                    
                 } else { 
-                    g.drawString("pick factory", 0,  280);
+                    g.setFont(fontsmall);
+                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.setFont(fontbig);
                 }
 
                 if(player.p1.temp.size() != 0) {
@@ -127,8 +130,10 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     } else if(MainAzul.mouseX >= x+135 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+185 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p2, "yellow");
                     }
-                } else { 
-                    g.drawString("pick factory", 0,  280);
+                }else { 
+                    g.setFont(fontsmall);
+                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.setFont(fontbig);
                 }
 
                 if(player.p2.temp.size() != 0) {
@@ -183,7 +188,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                     
                 } else { 
-                    g.drawString("pick factory", 0,  280);
+                    g.setFont(fontsmall);
+                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.setFont(fontbig);
                 }
 
                 if(player.p3.temp.size() != 0) {
@@ -238,7 +245,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                     
                 } else { 
-                 g.drawString("pick factory", 0,  280);
+                    g.setFont(fontsmall);
+                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.setFont(fontbig);
                 }
 
                 if(player.p4.temp.size() != 0) {
