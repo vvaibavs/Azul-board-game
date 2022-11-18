@@ -10,6 +10,7 @@ public class MainAzul{
     public static boolean firstCenter, start;
     public static int mouseX, mouseY;
     public static int cnt;
+    public static int choice;
 
     MainAzul() {
         discarded = new ArrayList<>();
@@ -36,88 +37,27 @@ public class MainAzul{
         }
         Collections.shuffle(bag);
         cnt = 0;
+        choice = 0;
     }
 
-    public void choicePull(Player p) {
-        int x = tempFact.getX();
-        int y = tempFact.getY();
-        int elms = 0;
-        if(tempFact != null && (!start && mouseX >= x+25 && mouseY >= y+65 && mouseX <= x+75 && mouseY <= y+105 || (tempFact.factTokens.get(elms).type.equals("black")))) {
-            if(tempFact.factTokens.get(elms).type.equals("black") && (mouseX >= x+25 && mouseY >= y+65 && mouseX <= x+75 && mouseY <= y+105)) {
-                int blackAmt = tempFact.factTokens.get(0).amount;
-                for(int i = 0; i < blackAmt; i++) {
-                    p.temp.add(new Token("black"));
-                    System.out.println("works");
-                }                
-                elms++;
-                tempFact = null;
-            } else if(tempFact.factTokens.get(elms).type.equals("black")) {
-                elms++;
+    public void choicePull(Player p, String type) {
+        for(int i = 0; i < tempFact.factTokens.size(); i++) {
+            if(tempFact.factTokens.get(i).type.equals(type)) {
+                for(int j = 0; j < tempFact.factTokens.get(i).amount; j++) {
+                    p.temp.add(new Token(type));
+                }
+                tempFact.factTokens.remove(i);
             }
-            
-        } 
-         if(tempFact != null && (!start && mouseX >= x+90 && mouseY >= y+25 && mouseX <= x+140 && mouseY <= y+75 || (tempFact.factTokens.get(elms).type.equals("blue")))) {
-            if(tempFact.factTokens.get(elms).type.equals("blue") && (mouseX >= x+90 && mouseY >= y+25 && mouseX <= x+140 && mouseY <= y+75)) {
-                int blueAmt = tempFact.factTokens.get(elms).amount;
-                for(int i = 0; i < blueAmt; i++) {
-                    p.temp.add(new Token("blue"));
-                    System.out.println("works");
-                }                
-                elms++;
-                tempFact = null;
-            } else if(tempFact.factTokens.get(elms).type.equals("blue")) {
-                elms++;
-            }
-
-        } 
-         if(tempFact != null && (!start && mouseX >= x+155 && mouseY >= y+65 && mouseX <= x+205 && mouseY <= y+105 || (tempFact.factTokens.get(elms).type.equals("red")))) {
-            if((tempFact.factTokens.get(elms).type.equals("red")) && mouseX >= x+155 && mouseY >= y+65 && mouseX <= x+205 && mouseY <= y+105) {
-                int redAmt = tempFact.factTokens.get(elms).amount;
-                for(int i = 0; i < redAmt; i++) {
-                    p.temp.add(new Token("red"));
-                    System.out.println("works");
-                }                
-                elms++;
-                tempFact = null;
-            } else if(tempFact.factTokens.get(elms).type.equals("red")) {
-                elms++;
-            }
-
-        } 
-         if(tempFact != null && (!start && mouseX >= x+55 && mouseY >= y+135 && mouseX <= x+105 && mouseY <= y+185 || (tempFact.factTokens.get(elms).type.equals("white")))) {
-            if((tempFact.factTokens.get(elms).type.equals("white")) && mouseX >= x+55 && mouseY >= y+135 && mouseX <= x+105 && mouseY <= y+185) {
-                int whiteAmt = tempFact.factTokens.get(elms).amount;
-                for(int i = 0; i < whiteAmt; i++) {
-                    p.temp.add(new Token("white"));
-                    System.out.println("works");
-                }                
-                elms++;
-                tempFact = null;
-            } else if(tempFact.factTokens.get(elms).type.equals("white")) {
-                elms++;
-            }
-        } 
-         if(!start && tempFact != null && mouseX >= x+135 && mouseY >= y+135 && mouseX <= x+185 && mouseY <= y+185) {
-            int yellowAmt = tempFact.factTokens.get(tempFact.factTokens.size()-1).amount;
-            for(int i = 0; i < yellowAmt; i++) {
-                p.temp.add(new Token("yellow"));
-                System.out.println("works");
-            }
-            tempFact = null;
         }
+        tempFact = null;
+        mouseX = 0;
+        mouseY = 0;
     }
 
     public void choicePlace(Player p) {
 
     }
 
-    public int countTokenFact(Token t, Factory f) {
-        return -1;
-    }
-
-    public ArrayList<Token> getBag(){
-        return bag;
-    }
     public static void nextPlayer(Player p1, Player p2, Player p3, Player p4) {
         if(p1.pTurn) {
             p2.pTurn = true;
