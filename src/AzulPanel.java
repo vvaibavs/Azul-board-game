@@ -14,7 +14,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
     public FactoryPanel factory;
     public MainAzul main;
     public LittleBoardPanel little1, little2, little3, little4;
-    private BufferedImage background, black, blue, red, white, yellow;
+    private BufferedImage background, black, blue, red, white, yellow,outline,normal;
     public AzulPanel() {
 
         start = new StartPanel();
@@ -27,6 +27,8 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
             red = ImageIO.read(new File("assets/red.jpg"));
             white = ImageIO.read(new File("assets/white.jpg"));
             yellow = ImageIO.read(new File("assets/yellow.jpg"));
+            outline = ImageIO.read(new File("assets/factoryoutline.png"));
+            normal = ImageIO.read(new File("assets/default.png"));
         } catch (Exception e) {
             System.out.println("failure");
         }
@@ -47,6 +49,8 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
             factory.drawFactories(g);
             factory.drawCenter(g);
             if(player.p1.pTurn) {
+                int x = 0;
+                int y = 0;
                 player.drawBoard(g);
                 g.setColor(new Color(0, 168, 178));
                 g.fillRect(506, 740, 380, 80);
@@ -55,12 +59,12 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 Stroke oldStroke = g2.getStroke();
                 g2.setStroke(new BasicStroke(3));
                 g.drawRect(506, 740, 380, 80);
-                
                 g.drawString("Current Player: 1", 5 , 330); 
                 if(MainAzul.tempFact != null) {
                     g.drawString("pick tokens in selected factory", 0,  280);
-                    int x = MainAzul.tempFact.getX();
-                    int y = MainAzul.tempFact.getY();
+                    x = MainAzul.tempFact.getX();
+                    y = MainAzul.tempFact.getY();
+                    g.drawImage(outline, x, y, 220, 220, null);   
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
                         main.choicePull(player.p1, "black");
                     } else if(MainAzul.mouseX >= x+90 && MainAzul.mouseY >= y+25 && MainAzul.mouseX <= x+140 && MainAzul.mouseY <= y+75) {
@@ -72,7 +76,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     } else if(MainAzul.mouseX >= x+135 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+185 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p1, "yellow");
                     }
-                   
+                   //repaint();
                 } else { 
                     g.setFont(fontsmall);
                     g.drawString("click on key corresponding to the number of the factory", 0,  280);
@@ -82,7 +86,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 if(player.p1.temp.size() != 0) {
                     int posx = 520;
                     int posy = 750;
-
+                    if(x != 0) {
+                        g.drawImage(normal, x, y, 220, 220, null);   
+                    }
                     for(int i = 0; i < player.p1.temp.size(); i++) {
                         if(player.p1.temp.get(i).type.equals("black")) {
                             g.drawImage(black, posx, posy, 60, 60, null);
@@ -102,10 +108,13 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                         }
                         
                     }
+                    
                 }
 
             }
             if(player.p2.pTurn) {
+                int x = 0;
+                int y = 0;
                 player.drawBoard(g); 
                 g.setColor(new Color(0, 168, 178));
                 g.fillRect(506, 740, 380, 80);
@@ -117,8 +126,10 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g.drawString("Current Player: 2", 5 , 330); 
                 if(MainAzul.tempFact != null) {
                     g.drawString("pick tokens in selected factory", 0,  280);
-                    int x = MainAzul.tempFact.getX();
-                    int y = MainAzul.tempFact.getY();
+                    x = MainAzul.tempFact.getX();
+                    y = MainAzul.tempFact.getY();
+                    g.drawImage(outline, x, y, 220, 220, null);   
+                    g.drawImage(outline, x, y, 220, 220, null);   
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
                         main.choicePull(player.p2, "black");
                     } else if(MainAzul.mouseX >= x+90 && MainAzul.mouseY >= y+25 && MainAzul.mouseX <= x+140 && MainAzul.mouseY <= y+75) {
@@ -139,7 +150,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 if(player.p2.temp.size() != 0) {
                     int posx = 520;
                     int posy = 750;
-
+                    if(x != 0) {
+                        g.drawImage(normal, x, y, 220, 220, null);   
+                    }
                     for(int i = 0; i < player.p2.temp.size(); i++) {
                         if(player.p2.temp.get(i).type.equals("black")) {
                             g.drawImage(black, posx, posy, 60, 60, null);
@@ -162,6 +175,8 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 }
             }
             if(player.p3.pTurn) {
+                int x = 0;
+                int y = 0;
                 player.drawBoard(g);
                 g.setColor(new Color(0, 168, 178));
                 g.fillRect(506, 740, 380, 80);
@@ -173,8 +188,10 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g.drawString("Current Player: 3", 5 , 330); 
                 if(MainAzul.tempFact != null) {
                     g.drawString("pick tokens in selected factory", 0,  280);
-                    int x = MainAzul.tempFact.getX();
-                    int y = MainAzul.tempFact.getY();
+                    x = MainAzul.tempFact.getX();
+                    y = MainAzul.tempFact.getY();
+                    g.drawImage(outline, x, y, 220, 220, null);   
+                    g.drawImage(outline, x, y, 220, 220, null);   
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
                         main.choicePull(player.p3, "black");
                     } else if(MainAzul.mouseX >= x+90 && MainAzul.mouseY >= y+25 && MainAzul.mouseX <= x+140 && MainAzul.mouseY <= y+75) {
@@ -196,7 +213,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 if(player.p3.temp.size() != 0) {
                     int posx = 520;
                     int posy = 750;
-
+                    if(x != 0) {
+                        g.drawImage(normal, x, y, 220, 220, null);   
+                    }
                     for(int i = 0; i < player.p3.temp.size(); i++) {
                         if(player.p3.temp.get(i).type.equals("black")) {
                             g.drawImage(black, posx, posy, 60, 60, null);
@@ -219,6 +238,8 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 }
             }
             if(player.p4.pTurn) {
+                int x = 0;
+                int y = 0;
                 player.drawBoard(g);
                 g.setColor(new Color(0, 168, 178));
                 g.fillRect(506, 740, 380, 80);
@@ -230,8 +251,10 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g.drawString("Current Player: 4", 5 , 330); 
                 if(MainAzul.tempFact != null) {
                     g.drawString("pick tokens in selected factory", 0,  280);
-                    int x = MainAzul.tempFact.getX();
-                    int y = MainAzul.tempFact.getY();
+                    x = MainAzul.tempFact.getX();
+                    y = MainAzul.tempFact.getY();
+                    g.drawImage(outline, x, y, 220, 220, null);   
+                    g.drawImage(outline, x, y, 220, 220, null);  
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
                         main.choicePull(player.p4, "black");
                     } else if(MainAzul.mouseX >= x+90 && MainAzul.mouseY >= y+25 && MainAzul.mouseX <= x+140 && MainAzul.mouseY <= y+75) {
@@ -253,7 +276,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 if(player.p4.temp.size() != 0) {
                     int posx = 520;
                     int posy = 750;
-
+                    if(x != 0) {
+                        g.drawImage(normal, x, y, 220, 220, null);   
+                    }
                     for(int i = 0; i < player.p4.temp.size(); i++) {
                         if(player.p4.temp.get(i).type.equals("black")) {
                             g.drawImage(black, posx, posy, 60, 60, null);
