@@ -67,7 +67,8 @@ public class FactoryPanel {
 
     public void drawTokens(Graphics g){
         if(MainAzul.start == false){ 
-            Font font = new Font("Times New Roman", Font.PLAIN, 25);
+            Font font = new Font("Dialog", Font.PLAIN, 50);
+            g.setFont(font);
             for(Factory i: facts){
                 int x = i.getX();
                 int y = i.getY();
@@ -109,6 +110,8 @@ public class FactoryPanel {
         int w = 0; 
         int y = 0;
         boolean first = false;
+        Font font = new Font("Dialog", Font.PLAIN, 50);
+        g.setFont(font);
         for(Token t: center){
             if(t.type().equals("black")){
                 ba++;

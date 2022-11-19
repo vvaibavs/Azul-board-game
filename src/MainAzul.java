@@ -58,7 +58,7 @@ public class MainAzul{
 
     public void choicePlace(Player p, int line) {
         for(int i = 0; i < p.temp.size(); i++) {
-            p.patternLn[line].add(p.temp.get(i));
+            p.patternLn[line-1].add(p.temp.get(i));
         }
         p.temp = new ArrayList<>();
         
