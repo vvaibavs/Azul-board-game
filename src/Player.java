@@ -11,6 +11,10 @@ public class Player {
     public Player() {
         pTurn = false;
         temp = new ArrayList<>();
+        patternLn = new ArrayList[5];
+        for(int i = 0; i < patternLn.length; i++) {
+            patternLn[i] = new ArrayList<>();
+        }
     }
 
     public boolean moveTokens() {

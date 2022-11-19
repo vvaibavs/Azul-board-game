@@ -15,6 +15,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
     public MainAzul main;
     public LittleBoardPanel little1, little2, little3, little4;
     private BufferedImage background, black, blue, red, white, yellow,outline,normal;
+    public int patternLine;
     public AzulPanel() {
 
         start = new StartPanel();
@@ -34,6 +35,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
         }
         player.height = getHeight();
         player.width = getWidth();
+        patternLine = 0;
         main = new MainAzul();
         addMouseListener(this);
         addKeyListener(this);
@@ -60,7 +62,11 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g2.setStroke(new BasicStroke(3));
                 g.drawRect(506, 740, 380, 80);
                 g.drawString("Current Player: 1", 5 , 330); 
-                if(MainAzul.tempFact != null) {
+                if(MainAzul.tempFact == null && player.p1.temp.size() == 0) {
+                    g.setFont(fontsmall);
+                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.setFont(fontbig);
+                } else if(MainAzul.tempFact != null) {
                     g.drawString("pick tokens in selected factory", 0,  280);
                     x = MainAzul.tempFact.getX();
                     y = MainAzul.tempFact.getY();
@@ -77,11 +83,17 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                         main.choicePull(player.p1, "yellow");
                     }
                    //repaint();
-                } else { 
+                } else if(player.p1.temp.size() != 0){ 
                     g.setFont(fontsmall);
-                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.drawString("pattern line", 0,  280);
                     g.setFont(fontbig);
+
+                    if(patternLine != 0) {
+                        main.choicePlace(player.p1, patternLine);
+                        patternLine = 0;
+                    }
                 }
+                player.drawTokens(g, player.p1);
 
                 if(player.p1.temp.size() != 0) {
                     int posx = 520;
@@ -124,7 +136,11 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g.drawRect(506, 740, 380, 80);
 
                 g.drawString("Current Player: 2", 5 , 330); 
-                if(MainAzul.tempFact != null) {
+                if(MainAzul.tempFact == null && player.p2.temp.size() == 0) {
+                    g.setFont(fontsmall);
+                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.setFont(fontbig);
+                } else if(MainAzul.tempFact != null) {
                     g.drawString("pick tokens in selected factory", 0,  280);
                     x = MainAzul.tempFact.getX();
                     y = MainAzul.tempFact.getY();
@@ -141,11 +157,18 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     } else if(MainAzul.mouseX >= x+135 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+185 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p2, "yellow");
                     }
-                }else { 
+                } else if(player.p2.temp.size() != 0){ 
                     g.setFont(fontsmall);
                     g.drawString("click on key corresponding to the number of the factory", 0,  280);
                     g.setFont(fontbig);
+
+                    if(patternLine != 0) {
+                        main.choicePlace(player.p2, patternLine);
+                        patternLine = 0;
+                    }
                 }
+
+                player.drawTokens(g, player.p2);
 
                 if(player.p2.temp.size() != 0) {
                     int posx = 520;
@@ -186,7 +209,11 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g.drawRect(506, 740, 380, 80);
                 
                 g.drawString("Current Player: 3", 5 , 330); 
-                if(MainAzul.tempFact != null) {
+                if(MainAzul.tempFact == null && player.p3.temp.size() == 0) {
+                    g.setFont(fontsmall);
+                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.setFont(fontbig);
+                } else if(MainAzul.tempFact != null) {
                     g.drawString("pick tokens in selected factory", 0,  280);
                     x = MainAzul.tempFact.getX();
                     y = MainAzul.tempFact.getY();
@@ -204,11 +231,18 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                         main.choicePull(player.p3, "yellow");
                     }
                     
-                } else { 
+                } else if(player.p3.temp.size() != 0){ 
                     g.setFont(fontsmall);
-                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.drawString("pattern line", 0,  280);
                     g.setFont(fontbig);
+
+                    if(patternLine != 0) {
+                        main.choicePlace(player.p3, patternLine);
+                        patternLine = 0;
+                    }
                 }
+
+                player.drawTokens(g, player.p3);
 
                 if(player.p3.temp.size() != 0) {
                     int posx = 520;
@@ -249,7 +283,11 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g.drawRect(506, 740, 380, 80);
 
                 g.drawString("Current Player: 4", 5 , 330); 
-                if(MainAzul.tempFact != null) {
+                if(MainAzul.tempFact == null && player.p4.temp.size() == 0) {
+                    g.setFont(fontsmall);
+                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.setFont(fontbig);
+                } else if(MainAzul.tempFact != null) {
                     g.drawString("pick tokens in selected factory", 0,  280);
                     x = MainAzul.tempFact.getX();
                     y = MainAzul.tempFact.getY();
@@ -267,11 +305,18 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                         main.choicePull(player.p4, "yellow");
                     }
                     
-                } else { 
+                } else if(player.p4.temp.size() != 0){ 
                     g.setFont(fontsmall);
-                    g.drawString("click on key corresponding to the number of the factory", 0,  280);
+                    g.drawString("pattern line", 0,  280);
                     g.setFont(fontbig);
+
+                    if(patternLine != 0) {
+                        main.choicePlace(player.p4, patternLine);
+                        patternLine = 0;
+                    }
                 }
+
+                player.drawTokens(g, player.p4);
 
                 if(player.p4.temp.size() != 0) {
                     int posx = 520;
@@ -302,6 +347,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
             }
         }
         factory.drawTokens(g);
+        repaint();
 
     }
     @Override
@@ -338,34 +384,59 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
     }
     @Override
     public void keyTyped(KeyEvent e) {
-        MainAzul.choice = e.getKeyChar() - '0';
-        if(MainAzul.choice == 1) {
-            MainAzul.tempFact = factory.f1;
-            System.out.println("f1");
-        } else if(MainAzul.choice == 2) {
-            System.out.println("f2");
-            MainAzul.tempFact = factory.f2;
-        } else if(MainAzul.choice == 3) {
-            System.out.println("f3");
-            MainAzul.tempFact = factory.f3;
-        } else if(MainAzul.choice == 4) {
-            System.out.println("f4");
-            MainAzul.tempFact = factory.f4;
-        } else if(MainAzul.choice == 5) {
-            System.out.println("f5");
-            MainAzul.tempFact = factory.f5;
-        } else if(MainAzul.choice == 6) {
-            System.out.println("f6");
-            MainAzul.tempFact = factory.f6;
-        } else if(MainAzul.choice == 7) {
-            System.out.println("f7");
-            MainAzul.tempFact = factory.f7;
-        } else if(MainAzul.choice == 8) {
-            System.out.println("f8");
-            MainAzul.tempFact = factory.f8;
-        } else if(MainAzul.choice == 9) {
-            System.out.println("f9");
-            MainAzul.tempFact = factory.f9;
+        boolean temp = false;
+        if(player.p1.pTurn && player.p1.temp.size() == 0) {
+            temp = true;
+        } else if(player.p2.pTurn && player.p2.temp.size() == 0) {
+            temp = true;
+        } else if(player.p3.pTurn && player.p3.temp.size() == 0) {
+            temp = true;
+        } else if(player.p4.pTurn && player.p4.temp.size() == 0) {
+            temp = true;
+        }
+        if(temp) {
+            MainAzul.choice = e.getKeyChar() - '0';
+            if(MainAzul.choice == 1) {
+                MainAzul.tempFact = factory.f1;
+                System.out.println("f1");
+            } else if(MainAzul.choice == 2) {
+                System.out.println("f2");
+                MainAzul.tempFact = factory.f2;
+            } else if(MainAzul.choice == 3) {
+                System.out.println("f3");
+                MainAzul.tempFact = factory.f3;
+            } else if(MainAzul.choice == 4) {
+                System.out.println("f4");
+                MainAzul.tempFact = factory.f4;
+            } else if(MainAzul.choice == 5) {
+                System.out.println("f5");
+                MainAzul.tempFact = factory.f5;
+            } else if(MainAzul.choice == 6) {
+                System.out.println("f6");
+                MainAzul.tempFact = factory.f6;
+            } else if(MainAzul.choice == 7) {
+                System.out.println("f7");
+                MainAzul.tempFact = factory.f7;
+            } else if(MainAzul.choice == 8) {
+                System.out.println("f8");
+                MainAzul.tempFact = factory.f8;
+            } else if(MainAzul.choice == 9) {
+                System.out.println("f9");
+                MainAzul.tempFact = factory.f9;
+            }
+        } else if(!temp) {
+            MainAzul.patternLnChoice = e.getKeyChar() - '0';
+            if(MainAzul.patternLnChoice == 1) {
+                patternLine = 0;
+            } else if(MainAzul.patternLnChoice == 2) {
+                patternLine = 1;
+            } else if(MainAzul.patternLnChoice == 3) {
+                patternLine = 2;
+            } else if(MainAzul.patternLnChoice == 4) {
+                patternLine = 3;
+            } else if(MainAzul.patternLnChoice ==  5) {
+                patternLine = 4;
+            }
         }
         repaint();
     }

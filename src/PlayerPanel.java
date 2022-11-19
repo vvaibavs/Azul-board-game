@@ -79,8 +79,22 @@ public class PlayerPanel {
         }
     }
 
-    public void drawTokens() {
-        
+    public void drawTokens(Graphics g, Player p) {
+        for(int i = 0; i < p.patternLn.length; i++) {
+            for(int j = 0; j < p.patternLn[i].size(); j++) {
+                if(p.patternLn[i].get(j).type.equals("black")) {
+                    g.drawImage(black, boardColumn(j + 1), boardRow(i + 1), 38, 38, null);
+                } else if(p.patternLn[i].get(j).type.equals("blue")) {
+                    g.drawImage(blue, boardColumn(j + 1), boardRow(i + 1), 38, 38, null);
+                } else if(p.patternLn[i].get(j).type.equals("red")) {
+                    g.drawImage(red, boardColumn(j + 1), boardRow(i + 1), 38, 38, null);
+                } else if(p.patternLn[i].get(j).type.equals("white")) {
+                    g.drawImage(white, boardColumn(j + 1), boardRow(i + 1), 38, 38, null);
+                } else if(p.patternLn[i].get(j).type.equals("yellow")) {
+                    g.drawImage(yellow, boardColumn(j + 1), boardRow(i + 1), 38, 38, null);
+                }
+            }
+        }
     }
 
     

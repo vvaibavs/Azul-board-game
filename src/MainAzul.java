@@ -11,12 +11,13 @@ public class MainAzul{
     public static int mouseX, mouseY;
     public static int cnt;
     public static int choice;
+    public static int patternLnChoice;
 
-    MainAzul() {
+    public MainAzul() {
         discarded = new ArrayList<>();
         firstCenter = true;
         start = true;
-        bag = new ArrayList<>(); // double check this, needs to stay the same across all objects
+        bag = new ArrayList<>();
         tempFact = null;
         mouseX = -1;
         mouseY = -1;
@@ -38,6 +39,7 @@ public class MainAzul{
         Collections.shuffle(bag);
         cnt = 0;
         choice = 0;
+        patternLnChoice = 0;
     }
 
     public void choicePull(Player p, String type) {
@@ -54,8 +56,12 @@ public class MainAzul{
         mouseY = 0;
     }
 
-    public void choicePlace(Player p) {
-
+    public void choicePlace(Player p, int line) {
+        for(int i = 0; i < p.temp.size(); i++) {
+            p.patternLn[line].add(p.temp.get(i));
+        }
+        p.temp = new ArrayList<>();
+        
     }
 
     public static void nextPlayer(Player p1, Player p2, Player p3, Player p4) {
