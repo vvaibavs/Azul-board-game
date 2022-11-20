@@ -141,6 +141,86 @@ public class PlayerPanel {
         }
     }
 
+    public void drawDeducted(Graphics g, Player p) {
+        for(int y = 0; y < p.deducted.size(); y++) {
+            if(p.deducted.get(y).type.equals("black")) {
+                g.drawImage(black, deductedColumn(y+1), 779, 40, 40, null);
+            } else if(p.deducted.get(y).type.equals("blue")) {
+                g.drawImage(blue, deductedColumn(y+1), 779, 40, 40, null);
+            } else if(p.deducted.get(y).type.equals("red")) {
+                g.drawImage(red, deductedColumn(y+1), 779, 40, 40, null);
+            } else if(p.deducted.get(y).type.equals("white")) {
+                g.drawImage(white, deductedColumn(y+1), 779, 40, 40, null);
+            } else if(p.deducted.get(y).type.equals("yellow")) {
+                g.drawImage(yellow, deductedColumn(y+1), 779, 40, 40, null);
+            }
+        }
+    }
+
+    public void drawSmallDeducted(Graphics g, Player p) {
+        for(int y = 0; y < p.deducted.size(); y++) {
+            if(p.deducted.get(y).type.equals("black")) {
+                g.drawImage(black, smallDeductedColumn(y+1), 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("blue")) {
+                g.drawImage(blue, smallDeductedColumn(y+1), 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("red")) {
+                g.drawImage(red, smallDeductedColumn(y+1), 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("white")) {
+                g.drawImage(white, smallDeductedColumn(y+1), 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("yellow")) {
+                g.drawImage(yellow, smallDeductedColumn(y+1), 214, 20, 20, null);
+            }
+        }
+    }
+
+    public void drawSmallDeductedTwo(Graphics g, Player p) {
+        for(int y = 0; y < p.deducted.size(); y++) {
+            if(p.deducted.get(y).type.equals("black")) {
+                g.drawImage(black, smallDeductedColumn(y+1) + 260, 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("blue")) {
+                g.drawImage(blue, smallDeductedColumn(y+1) + 260, 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("red")) {
+                g.drawImage(red, smallDeductedColumn(y+1) + 260, 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("white")) {
+                g.drawImage(white, smallDeductedColumn(y+1) + 260, 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("yellow")) {
+                g.drawImage(yellow, smallDeductedColumn(y+1) + 260, 214, 20, 20, null);
+            }
+        }
+    }
+
+    public void drawSmallDeductedThree(Graphics g, Player p) {
+        for(int y = 0; y < p.deducted.size(); y++) {
+            if(p.deducted.get(y).type.equals("black")) {
+                g.drawImage(black, smallDeductedColumn(y+1) + 520, 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("blue")) {
+                g.drawImage(blue, smallDeductedColumn(y+1) + 520, 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("red")) {
+                g.drawImage(red, smallDeductedColumn(y+1) + 520, 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("white")) {
+                g.drawImage(white, smallDeductedColumn(y+1) + 520, 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("yellow")) {
+                g.drawImage(yellow, smallDeductedColumn(y+1) + 520, 214, 20, 20, null);
+            }
+        }
+    }
+    public int deductedColumn(int x) {
+        return((x-1) * 48) + 25;
+    }
+    public int smallDeductedColumn(int x) {
+        return((x-1) * 24) + 12;
+    }
+
+    public void drawColorBoard(Graphics g, Player p) {
+        for(int i = 0; i < p.board.length; i++) {
+            for(int j = 0; j < p.board[i].length; j++) {
+                if(p.board[i][j] != null) {
+                    g.drawImage(xtile, boardColorColumn(j+1), boardColorRow(i+1), 38, 38, null);
+                }
+            }
+        }
+    }
+
 
     public int boardRow(int x) {
         return ((x - 1) * 44) + 531;
@@ -161,8 +241,12 @@ public class PlayerPanel {
         return ((x - 1) * 27) + 358;
     }
 
-    public int boardcolorColumn(int x) {
+    public int boardColorColumn(int x) {
         return ((x - 1) * 43) + 263;
+    }
+
+    public int boardColorRow(int x) {
+        return((x - 1) * 43) + 531;
     }
 
     public int pointerColumn(int x) {

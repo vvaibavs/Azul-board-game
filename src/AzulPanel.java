@@ -125,19 +125,57 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                     
                 }
+
+                if(player.p1.patternLn[0].size() == 1) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(1, player.p1);
+                    }
+                    
+                }
+                if(player.p1.patternLn[1].size() == 2) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(2, player.p1);
+                    }
+                }
+                if(player.p1.patternLn[2].size() == 3) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(3, player.p1);
+                    }
+                }
+                if(player.p1.patternLn[3].size() == 4) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(4, player.p1);
+                    }
+                }
+                if(player.p1.patternLn[4].size() == 5) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(5, player.p1);
+                    }
+                }
                 g.setFont(fontsmall);
 
                 player.drawSmallBoard(g, 0);
                 player.drawSmallTokens(g, player.p2);
+                player.drawSmallDeducted(g, player.p2);
                 g.drawString("player 2", 70, 280);
 
                 player.drawSmallBoard(g, 260);
                 player.drawSmallTokens2(g, player.p3);
+                player.drawSmallDeductedTwo(g, player.p3);
                 g.drawString("player 3", 340, 280);
 
                 player.drawSmallBoard(g, 520);
                 player.drawSmallTokens3(g, player.p4);
+                player.drawSmallDeductedThree(g, player.p4);
                 g.drawString("player 4", 600, 280);
+
+                player.drawDeducted(g, player.p1);
+                player.drawColorBoard(g, player.p1);
 
                 
 
@@ -217,20 +255,57 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
+                if(player.p2.patternLn[0].size() == 1) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(1, player.p2);
+                    }
+                    
+                }
+                if(player.p2.patternLn[1].size() == 2) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(2, player.p2);
+                    }
+                }
+                if(player.p2.patternLn[2].size() == 3) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(3, player.p2);
+                    }
+                }
+                if(player.p2.patternLn[3].size() == 4) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(4, player.p2);
+                    }
+                }
+                if(player.p2.patternLn[4].size() == 5) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(5, player.p2);
+                    }
+                }
+
                 g.setFont(fontsmall);
 
                 player.drawSmallBoard(g, 0);
                 player.drawSmallTokens(g, player.p1);
+                player.drawSmallDeducted(g, player.p1);
                 g.drawString("player 1", 70, 280);
 
                 player.drawSmallBoard(g, 260);
                 player.drawSmallTokens2(g, player.p3);
+                player.drawSmallDeductedTwo(g, player.p3);
                 g.drawString("player 3", 340, 280);
 
                 player.drawSmallBoard(g, 520);
                 player.drawSmallTokens3(g, player.p4);
+                player.drawSmallDeductedThree(g, player.p4);
                 g.drawString("player 4", 600, 280);
 
+                player.drawDeducted(g, player.p2);
+                player.drawColorBoard(g, player.p2);
                 
 
             }
@@ -308,21 +383,59 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
+                if(player.p3.patternLn[0].size() == 1) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(1, player.p3);
+                    }
+                    
+                }
+                if(player.p3.patternLn[1].size() == 2) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(2, player.p3);
+                    }
+                }
+                if(player.p3.patternLn[2].size() == 3) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(3, player.p3);
+                    }
+                }
+                if(player.p3.patternLn[3].size() == 4) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(4, player.p3);
+                    }
+                }
+                if(player.p3.patternLn[4].size() == 5) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(5, player.p3);
+                    }
+                }
+
+                
                 g.setFont(fontsmall);
 
                 player.drawSmallBoard(g, 0);
                 player.drawSmallTokens(g, player.p1);
+                player.drawSmallDeducted(g, player.p1);
                 g.drawString("player 1", 70, 280);
 
                 player.drawSmallBoard(g, 260);
                 player.drawSmallTokens2(g, player.p2);
+                player.drawSmallDeductedTwo(g, player.p2);
                 g.drawString("player 2", 340, 280);
 
                 player.drawSmallBoard(g, 520);
                 player.drawSmallTokens3(g, player.p4);
+                player.drawSmallDeductedThree(g, player.p4);
                 g.drawString("player 4", 600, 280);
 
-                
+                player.drawDeducted(g, player.p3);
+                player.drawColorBoard(g, player.p3);
+
             }
             if(player.p4.pTurn) {
                 g.setFont(fontsmall);
@@ -399,21 +512,57 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
+                if(player.p4.patternLn[0].size() == 1) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(1, player.p4);
+                    }
+                    
+                }
+                if(player.p4.patternLn[1].size() == 2) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(2, player.p4);
+                    }
+                }
+                if(player.p4.patternLn[2].size() == 3) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(3, player.p4);
+                    }
+                }
+                if(player.p4.patternLn[3].size() == 4) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(4, player.p4);
+                    }
+                }
+                if(player.p4.patternLn[4].size() == 5) {
+                    g.fillRect(530, 380, 60, 60);
+                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
+                        main.moveTokens(5, player.p4);
+                    }
+                }
+
                 g.setFont(fontsmall);
 
                 player.drawSmallBoard(g, 0);
                 player.drawSmallTokens(g, player.p1);
+                player.drawSmallDeducted(g, player.p1);
                 g.drawString("player 1", 70, 280);
 
                 player.drawSmallBoard(g, 260);
                 player.drawSmallTokens2(g, player.p2);
+                player.drawSmallDeductedTwo(g, player.p2);
                 g.drawString("player 2", 340, 280);
 
                 player.drawSmallBoard(g, 520);
                 player.drawSmallTokens3(g, player.p3);
+                player.drawSmallDeductedThree(g, player.p3);
                 g.drawString("player 3", 600, 280);
 
-                
+                player.drawDeducted(g, player.p4);
+                player.drawColorBoard(g, player.p4);
 
             }
         }

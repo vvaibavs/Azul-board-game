@@ -11,3 +11,7 @@ ImageIO.write(im, "PNG", new File("shot.png"));
 1500,800
 100,100
 1477 763
+
+deduction squares:
+25 779
++45

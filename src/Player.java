@@ -5,6 +5,7 @@ public class Player {
     public int points;
     public ArrayList<Token>[] patternLn;
     public Token[][] board;
+    public ArrayList<Token> deducted;
     public ArrayList<Integer> extraPoints;
     public ArrayList<Token> temp;
 
@@ -12,9 +13,12 @@ public class Player {
         pTurn = false;
         temp = new ArrayList<>();
         patternLn = new ArrayList[5];
+        deducted = new ArrayList<>();
         for(int i = 0; i < patternLn.length; i++) {
             patternLn[i] = new ArrayList<>();
         }
+
+        board = new Token[5][5];
     }
 
     public boolean moveTokens() {
