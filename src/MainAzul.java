@@ -12,6 +12,7 @@ public class MainAzul{
     public static int cnt;
     public static int choice;
     public static int patternLnChoice;
+    public static ArrayList<Token> center;
 
     public MainAzul() {
         discarded = new ArrayList<>();
@@ -19,6 +20,7 @@ public class MainAzul{
         start = true;
         bag = new ArrayList<>();
         tempFact = null;
+        center = new ArrayList<>();
         mouseX = -1;
         mouseY = -1;
         for(int i = 0; i < 20; i++) {
@@ -51,11 +53,37 @@ public class MainAzul{
                 tempFact.factTokens.remove(i);
             }
         }
+        for(int j = 0; j < tempFact.factTokens.size(); j++) {
+            for(int x = 0; x < tempFact.factTokens.get(j).amount; x++) {
+                center.add(new Token(tempFact.factTokens.get(j).type));
+            }
+        }
+        tempFact.factTokens = new ArrayList<>();
         tempFact = null;
         mouseX = 0;
         mouseY = 0;
     }
 
+    public void pullCenter(Player p, String type) {
+        for(int i = 0; i < center.size(); i++) {
+            System.out.println("hi");
+            if(center.get(i).type.equals(type)) {
+                System.out.println("hi");
+                p.temp.add(new Token(center.get(i).type));
+            }
+        }
+        if(firstCenter) {
+            p.deducted.add(new Token("minus"));
+            firstCenter = false;
+        }
+        for(int i = center.size()-1; i > -1; i--) {
+            if(center.get(i).type.equals(type)) {
+                center.remove(i);
+            }
+        }
+        mouseX = 0;
+        mouseY = 0;
+    }
     public void choicePlace(Player p, int line) {
         int j = line - p.patternLn[line-1].size();
         while(j > 0 && p.temp.size() > 0) {

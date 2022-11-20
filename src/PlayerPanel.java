@@ -143,7 +143,9 @@ public class PlayerPanel {
 
     public void drawDeducted(Graphics g, Player p) {
         for(int y = 0; y < p.deducted.size(); y++) {
-            if(p.deducted.get(y).type.equals("black")) {
+            if(p.deducted.get(y).type.equals("minus")) {
+                g.drawImage(onetile, deductedColumn(y+1), 779, 40, 40, null);
+            } else if(p.deducted.get(y).type.equals("black")) {
                 g.drawImage(black, deductedColumn(y+1), 779, 40, 40, null);
             } else if(p.deducted.get(y).type.equals("blue")) {
                 g.drawImage(blue, deductedColumn(y+1), 779, 40, 40, null);
@@ -159,7 +161,9 @@ public class PlayerPanel {
 
     public void drawSmallDeducted(Graphics g, Player p) {
         for(int y = 0; y < p.deducted.size(); y++) {
-            if(p.deducted.get(y).type.equals("black")) {
+            if(p.deducted.get(y).type.equals("minus")) {
+                g.drawImage(onetile, smallDeductedColumn(y+1), 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("black")) {
                 g.drawImage(black, smallDeductedColumn(y+1), 214, 20, 20, null);
             } else if(p.deducted.get(y).type.equals("blue")) {
                 g.drawImage(blue, smallDeductedColumn(y+1), 214, 20, 20, null);
@@ -175,7 +179,9 @@ public class PlayerPanel {
 
     public void drawSmallDeductedTwo(Graphics g, Player p) {
         for(int y = 0; y < p.deducted.size(); y++) {
-            if(p.deducted.get(y).type.equals("black")) {
+            if(p.deducted.get(y).type.equals("minus")) {
+                g.drawImage(onetile, smallDeductedColumn(y+1) + 260, 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("black")) {
                 g.drawImage(black, smallDeductedColumn(y+1) + 260, 214, 20, 20, null);
             } else if(p.deducted.get(y).type.equals("blue")) {
                 g.drawImage(blue, smallDeductedColumn(y+1) + 260, 214, 20, 20, null);
@@ -191,7 +197,9 @@ public class PlayerPanel {
 
     public void drawSmallDeductedThree(Graphics g, Player p) {
         for(int y = 0; y < p.deducted.size(); y++) {
-            if(p.deducted.get(y).type.equals("black")) {
+            if(p.deducted.get(y).type.equals("minus")) {
+                g.drawImage(onetile, smallDeductedColumn(y+1) + 520, 214, 20, 20, null);
+            } else if(p.deducted.get(y).type.equals("black")) {
                 g.drawImage(black, smallDeductedColumn(y+1) + 520, 214, 20, 20, null);
             } else if(p.deducted.get(y).type.equals("blue")) {
                 g.drawImage(blue, smallDeductedColumn(y+1) + 520, 214, 20, 20, null);
@@ -216,6 +224,36 @@ public class PlayerPanel {
             for(int j = 0; j < p.board[i].length; j++) {
                 if(p.board[i][j] != null) {
                     g.drawImage(xtile, boardColorColumn(j+1), boardColorRow(i+1), 38, 38, null);
+                }
+            }
+        }
+    }
+
+    public void drawSmallColor(Graphics g, Player p) {
+        for(int i = 0; i < p.board.length; i++) {
+            for(int j = 0; j < p.board[i].length; j++) {
+                if(p.board[i][j] != null) {
+                    g.drawImage(xtile, smallColorColumn(j+1), smallColorRow(i+1), 19, 19, null);
+                }
+            }
+        }
+    }
+
+    public void drawSmallColor2(Graphics g, Player p) {
+        for(int i = 0; i < p.board.length; i++) {
+            for(int j = 0; j < p.board[i].length; j++) {
+                if(p.board[i][j] != null) {
+                    g.drawImage(xtile, smallColorColumn(j+1) + 260, smallColorRow(i+1), 19, 19, null);
+                }
+            }
+        }
+    }
+
+    public void drawSmallColor3(Graphics g, Player p) {
+        for(int i = 0; i < p.board.length; i++) {
+            for(int j = 0; j < p.board[i].length; j++) {
+                if(p.board[i][j] != null) {
+                    g.drawImage(xtile, smallColorColumn(j+1) + 520, smallColorRow(i+1), 19, 19, null);
                 }
             }
         }
@@ -247,6 +285,14 @@ public class PlayerPanel {
 
     public int boardColorRow(int x) {
         return((x - 1) * 43) + 531;
+    }
+
+    public int smallColorColumn(int x) {
+        return ((x - 1) * 22) + 130;
+    }
+
+    public int smallColorRow(int x) {
+        return ((x - 1) * 22) + 90;
     }
 
     public int pointerColumn(int x) {

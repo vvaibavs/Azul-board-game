@@ -8,6 +8,7 @@ public class FactoryPanel {
     public Factory f1, f2, f3, f4, f5, f6, f7, f8, f9, cent;
     public ArrayList<Token> center;
     public Factory[] facts;
+    public boolean first;
     public FactoryPanel(){
         try {
             factory = ImageIO.read(new File("assets/factory.png"));
@@ -47,10 +48,7 @@ public class FactoryPanel {
 
         Factory[] fs = {f1, f2, f3, f4, f5, f6, f7, f8, f9};
         facts = fs;
-        Token t = new Token("black");
-        center.add(t);
-        center.add(t);
-        center.add(t);
+        first = true;
     }
 
     public void drawFactories(Graphics g){
@@ -59,10 +57,6 @@ public class FactoryPanel {
             int y = i.getY();
             g.drawImage(factory, x, y, 220, 220, null);
         }
-    }
-
-    public void addCenter(Token t){
-        center.add(t);
     }
 
     public void drawTokens(Graphics g){
@@ -109,10 +103,9 @@ public class FactoryPanel {
         int r = 0;
         int w = 0; 
         int y = 0;
-        boolean first = false;
         Font font = new Font("Dialog", Font.PLAIN, 50);
         g.setFont(font);
-        for(Token t: center){
+        for(Token t: MainAzul.center){
             if(t.type().equals("black")){
                 ba++;
             }
@@ -128,25 +121,31 @@ public class FactoryPanel {
             if(t.type().equals("yellow")){
                 y++;
             }
-            if(t.type().equals("first")){
-                first = true;
-            }
         }
-        g.drawImage(black, 1000, 400, 50, 50, null);
-        Color whi = new Color(255, 255, 255);
-        g.setColor(whi);
-        g.drawString(""+ba, 1010, 440);
-        Color bl = new Color(0, 0, 0);
-        g.setColor(bl);
-        g.drawImage(blue, 1050, 400, 50, 50, null);
-        g.drawString(""+ba, 1060, 440);
-        g.drawImage(red, 1100, 400, 50, 50, null);
-        g.drawString(""+ba, 1110, 440);
-        g.drawImage(white, 1150, 400, 50, 50, null);
-        g.drawString(""+ba, 1160, 440);
-        g.drawImage(yellow, 1200, 400, 50, 50, null);
-        g.drawString(""+ba, 1210, 440);
-        if(first){
+        if(ba > 0) {
+            g.drawImage(black, 1000, 400, 50, 50, null);
+            g.setColor(Color.WHITE);
+            g.drawString(""+ba, 1010, 445);
+        }
+        g.setColor(Color.BLACK);
+        if(bu > 0) {
+            g.drawImage(blue, 1060, 400, 50, 50, null);
+            g.drawString(""+bu, 1070, 445);
+        }
+        if(r > 0) {
+            g.drawImage(red, 1120, 400, 50, 50, null);
+            g.drawString(""+r, 1130, 445);            
+        }
+        if(w > 0) {
+            g.drawImage(white, 1180, 400, 50, 50, null);
+            g.drawString(""+w, 1190, 445);
+        }
+        if(y > 0) {
+            g.drawImage(yellow, 1240, 400, 50, 50, null);
+            g.drawString(""+y, 1250, 445);            
+        }
+
+        if(MainAzul.firstCenter){
             g.drawImage(firstT, 1100, 460, 50, 50, null);
         }
     }

@@ -157,20 +157,39 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                         main.moveTokens(5, player.p1);
                     }
                 }
+
+                if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p1, "black");
+                }
+                if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1110 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p1, "blue");
+                }
+                if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p1, "red");
+                }
+                if(MainAzul.mouseX >= 1180 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1230 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p1, "white");
+                }
+                if(MainAzul.mouseX >= 1240 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1290 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p1, "yellow");
+                }
                 g.setFont(fontsmall);
 
                 player.drawSmallBoard(g, 0);
                 player.drawSmallTokens(g, player.p2);
                 player.drawSmallDeducted(g, player.p2);
+                player.drawSmallColor(g, player.p2);
                 g.drawString("player 2", 70, 280);
 
                 player.drawSmallBoard(g, 260);
                 player.drawSmallTokens2(g, player.p3);
+                player.drawSmallColor2(g, player.p3);
                 player.drawSmallDeductedTwo(g, player.p3);
                 g.drawString("player 3", 340, 280);
 
                 player.drawSmallBoard(g, 520);
                 player.drawSmallTokens3(g, player.p4);
+                player.drawSmallColor3(g, player.p4);
                 player.drawSmallDeductedThree(g, player.p4);
                 g.drawString("player 4", 600, 280);
 
@@ -287,20 +306,39 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
+                if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p2, "black");
+                }
+                if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1210 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p2, "blue");
+                }
+                if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p2, "red");
+                }
+                if(MainAzul.mouseX >= 1180 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1230 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p2, "white");
+                }
+                if(MainAzul.mouseX >= 1240 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1290 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p2, "yellow");
+                }
+
                 g.setFont(fontsmall);
 
                 player.drawSmallBoard(g, 0);
                 player.drawSmallTokens(g, player.p1);
+                player.drawSmallColor(g, player.p1);
                 player.drawSmallDeducted(g, player.p1);
                 g.drawString("player 1", 70, 280);
 
                 player.drawSmallBoard(g, 260);
                 player.drawSmallTokens2(g, player.p3);
+                player.drawSmallColor2(g, player.p3);
                 player.drawSmallDeductedTwo(g, player.p3);
                 g.drawString("player 3", 340, 280);
 
                 player.drawSmallBoard(g, 520);
                 player.drawSmallTokens3(g, player.p4);
+                player.drawSmallColor3(g, player.p4);
                 player.drawSmallDeductedThree(g, player.p4);
                 g.drawString("player 4", 600, 280);
 
@@ -415,21 +453,40 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
+                if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p3, "black");
+                }
+                if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1210 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p3, "blue");
+                }
+                if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p3, "red");
+                }
+                if(MainAzul.mouseX >= 1180 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1230 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p3, "white");
+                }
+                if(MainAzul.mouseX >= 1240 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1290 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p3, "yellow");
+                }
+
                 
                 g.setFont(fontsmall);
 
                 player.drawSmallBoard(g, 0);
                 player.drawSmallTokens(g, player.p1);
+                player.drawSmallColor(g, player.p1);
                 player.drawSmallDeducted(g, player.p1);
                 g.drawString("player 1", 70, 280);
 
                 player.drawSmallBoard(g, 260);
                 player.drawSmallTokens2(g, player.p2);
+                player.drawSmallColor(g, player.p2);
                 player.drawSmallDeductedTwo(g, player.p2);
                 g.drawString("player 2", 340, 280);
 
                 player.drawSmallBoard(g, 520);
                 player.drawSmallTokens3(g, player.p4);
+                player.drawSmallColor(g, player.p4);
                 player.drawSmallDeductedThree(g, player.p4);
                 g.drawString("player 4", 600, 280);
 
@@ -458,8 +515,8 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     g.drawString("pick tokens in selected factory", 230,  330);
                     x = MainAzul.tempFact.getX();
                     y = MainAzul.tempFact.getY();
-                    g.drawImage(outline, x, y, 220, 220, null);   
-                    g.drawImage(outline, x, y, 220, 220, null);  
+                    g.drawImage(outline, x, y, 220, 220, null);
+                    g.drawImage(outline, x, y, 220, 220, null);
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
                         main.choicePull(player.p4, "black");
                     } else if(MainAzul.mouseX >= x+90 && MainAzul.mouseY >= y+25 && MainAzul.mouseX <= x+140 && MainAzul.mouseY <= y+75) {
@@ -544,20 +601,39 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
+                if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p4, "black");
+                }
+                if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1210 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p4, "blue");
+                }
+                if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p4, "red");
+                }
+                if(MainAzul.mouseX >= 1180 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1230 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p4, "white");
+                }
+                if(MainAzul.mouseX >= 1240 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1290 && MainAzul.mouseY <= 450) {
+                    main.pullCenter(player.p4, "yellow");
+                }
+
                 g.setFont(fontsmall);
 
                 player.drawSmallBoard(g, 0);
                 player.drawSmallTokens(g, player.p1);
+                player.drawSmallColor(g, player.p1);
                 player.drawSmallDeducted(g, player.p1);
                 g.drawString("player 1", 70, 280);
 
                 player.drawSmallBoard(g, 260);
                 player.drawSmallTokens2(g, player.p2);
+                player.drawSmallColor(g, player.p2);
                 player.drawSmallDeductedTwo(g, player.p2);
                 g.drawString("player 2", 340, 280);
 
                 player.drawSmallBoard(g, 520);
                 player.drawSmallTokens3(g, player.p3);
+                player.drawSmallColor(g, player.p3);
                 player.drawSmallDeductedThree(g, player.p3);
                 g.drawString("player 3", 600, 280);
 
