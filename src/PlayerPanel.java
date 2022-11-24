@@ -28,9 +28,8 @@ public class PlayerPanel {
             pointercounter = ImageIO.read(new File("assets/pointer counter.jpg"));
             xtile = ImageIO.read(new File("assets/x.png"));
         } catch(Exception e) {
-
+            System.out.println("ur a failure");
         }
-        MainAzul.cnt+=1;
     }
 
     public void drawBoard(Graphics g) {
@@ -257,6 +256,10 @@ public class PlayerPanel {
                 }
             }
         }
+    }
+
+    public void drawPoints(Graphics g, Player p) {
+        
     }
 
 

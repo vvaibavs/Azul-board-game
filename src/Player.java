@@ -25,8 +25,13 @@ public class Player {
         return false;
     }
 
-    public int calcPoints() {
-        return points;
+    public boolean gameOver() {
+        for(int i = 0; i < this.board.length; i++) {
+            if(board[i][0] != null && board[i][1] != null && board[i][2] != null && board[i][3] != null && board[i][4] != null) {
+                return true;
+            }
+        }
+        return false;
     }
 
     public boolean gameWinner() {

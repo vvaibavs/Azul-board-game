@@ -149,4 +149,9 @@ public class FactoryPanel {
             g.drawImage(firstT, 1100, 460, 50, 50, null);
         }
     }
+
+    public boolean factEmpty() {
+        return f1.factTokens.size() == 0 && f2.factTokens.size() == 0 && f3.factTokens.size() == 0 && f4.factTokens.size() == 0 && f5.factTokens.size() == 0 && f6.factTokens.size() == 0 && f7.factTokens.size() == 0 && f8.factTokens.size() == 0 && f9.factTokens.size() == 0;
+    }
+
 }

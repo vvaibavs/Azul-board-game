@@ -5,6 +5,7 @@ import java.awt.image.*;
 import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.io.*;
+import java.util.ArrayList;
 import java.awt.event.MouseListener;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
@@ -13,7 +14,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
     public PlayerPanel player;
     public FactoryPanel factory;
     public MainAzul main;
-    public LittleBoardPanel little1, little2, little3, little4;
+    // public LittleBoardPanel little1, little2, little3, little4;
     private BufferedImage background, black, blue, red, white, yellow,outline,normal;
     public int patternLine;
     public AzulPanel() {
@@ -126,37 +127,90 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     
                 }
 
-                if(player.p1.patternLn[0].size() == 1) {
+                if(factory.factEmpty()) {
                     g.fillRect(530, 380, 60, 60);
                     if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(1, player.p1);
+                        if(player.p1.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p1);
+                        }
+                        if(player.p1.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p1);
+                        }
+                        if(player.p1.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p1);
+                        }
+                        if(player.p1.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p1);
+                        }
+                        if(player.p1.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p1);
+                        }
+
+                        if(player.p2.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p2);
+                        }
+                        if(player.p2.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p2);
+                        }
+                        if(player.p2.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p2);
+                        }
+                        if(player.p2.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p2);
+                        }
+                        if(player.p2.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p2);
+                        }
+
+                        if(player.p3.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p3);
+                        }
+                        if(player.p3.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p3);
+                        }
+                        if(player.p3.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p3);
+                        }
+                        if(player.p3.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p3);
+                        }
+                        if(player.p3.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p3);
+                        }
+
+                        if(player.p4.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p4);
+                        }
+                        if(player.p4.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p4);
+                        }
+                        if(player.p4.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p4);
+                        }
+                        if(player.p4.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p4);
+                        }
+                        if(player.p4.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p4);
+                        }
+
+                        System.out.println(player.p1.points);
+                        System.out.println(player.p2.points);
+                        System.out.println(player.p3.points);
+                        System.out.println(player.p4.points);
+
+
+                        if(player.p1.gameOver()) {
+                            //show winner screen
+                        } else {
+                            reset();
+                        }
+                        
+                        
                     }
                     
                 }
-                if(player.p1.patternLn[1].size() == 2) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(2, player.p1);
-                    }
-                }
-                if(player.p1.patternLn[2].size() == 3) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(3, player.p1);
-                    }
-                }
-                if(player.p1.patternLn[3].size() == 4) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(4, player.p1);
-                    }
-                }
-                if(player.p1.patternLn[4].size() == 5) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(5, player.p1);
-                    }
-                }
+                
 
                 if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p1, "black");
@@ -173,6 +227,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 if(MainAzul.mouseX >= 1240 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1290 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p1, "yellow");
                 }
+
+
+                g.setColor(Color.BLACK);
                 g.setFont(fontsmall);
 
                 player.drawSmallBoard(g, 0);
@@ -274,42 +331,89 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
-                if(player.p2.patternLn[0].size() == 1) {
+                if(factory.factEmpty()) {
                     g.fillRect(530, 380, 60, 60);
                     if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(1, player.p2);
+                        if(player.p1.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p1);
+                        }
+                        if(player.p1.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p1);
+                        }
+                        if(player.p1.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p1);
+                        }
+                        if(player.p1.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p1);
+                        }
+                        if(player.p1.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p1);
+                        }
+
+                        if(player.p2.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p2);
+                        }
+                        if(player.p2.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p2);
+                        }
+                        if(player.p2.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p2);
+                        }
+                        if(player.p2.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p2);
+                        }
+                        if(player.p2.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p2);
+                        }
+
+                        if(player.p3.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p3);
+                        }
+                        if(player.p3.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p3);
+                        }
+                        if(player.p3.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p3);
+                        }
+                        if(player.p3.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p3);
+                        }
+                        if(player.p3.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p3);
+                        }
+
+                        if(player.p4.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p4);
+                        }
+                        if(player.p4.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p4);
+                        }
+                        if(player.p4.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p4);
+                        }
+                        if(player.p4.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p4);
+                        }
+                        if(player.p4.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p4);
+                        }
+
+                        if(player.p2.gameOver()) {
+                            //show winner screen
+                        } else {
+                            reset();
+                        }
+
+
+                        
                     }
                     
-                }
-                if(player.p2.patternLn[1].size() == 2) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(2, player.p2);
-                    }
-                }
-                if(player.p2.patternLn[2].size() == 3) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(3, player.p2);
-                    }
-                }
-                if(player.p2.patternLn[3].size() == 4) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(4, player.p2);
-                    }
-                }
-                if(player.p2.patternLn[4].size() == 5) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(5, player.p2);
-                    }
                 }
 
                 if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p2, "black");
                 }
-                if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1210 && MainAzul.mouseY <= 450) {
+                if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1110 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p2, "blue");
                 }
                 if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
@@ -321,6 +425,8 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 if(MainAzul.mouseX >= 1240 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1290 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p2, "yellow");
                 }
+
+                
 
                 g.setFont(fontsmall);
 
@@ -385,7 +491,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     g.setFont(fontsmall);
                     g.drawString("pattern line", 230,  330);
                     
-
+                    
                     if(patternLine != 0) {
                         main.choicePlace(player.p3, patternLine);
                         patternLine = 0;
@@ -421,42 +527,87 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
-                if(player.p3.patternLn[0].size() == 1) {
+                if(factory.factEmpty()) {
                     g.fillRect(530, 380, 60, 60);
                     if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(1, player.p3);
+                        if(player.p1.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p1);
+                        }
+                        if(player.p1.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p1);
+                        }
+                        if(player.p1.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p1);
+                        }
+                        if(player.p1.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p1);
+                        }
+                        if(player.p1.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p1);
+                        }
+
+                        if(player.p2.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p2);
+                        }
+                        if(player.p2.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p2);
+                        }
+                        if(player.p2.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p2);
+                        }
+                        if(player.p2.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p2);
+                        }
+                        if(player.p2.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p2);
+                        }
+
+                        if(player.p3.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p3);
+                        }
+                        if(player.p3.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p3);
+                        }
+                        if(player.p3.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p3);
+                        }
+                        if(player.p3.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p3);
+                        }
+                        if(player.p3.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p3);
+                        }
+
+                        if(player.p4.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p4);
+                        }
+                        if(player.p4.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p4);
+                        }
+                        if(player.p4.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p4);
+                        }
+                        if(player.p4.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p4);
+                        }
+                        if(player.p4.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p4);
+                        }
+
+                        if(player.p3.gameOver()) {
+                            //show winner screen
+                        } else {
+                            reset();
+                        }
+                        
                     }
                     
-                }
-                if(player.p3.patternLn[1].size() == 2) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(2, player.p3);
-                    }
-                }
-                if(player.p3.patternLn[2].size() == 3) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(3, player.p3);
-                    }
-                }
-                if(player.p3.patternLn[3].size() == 4) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(4, player.p3);
-                    }
-                }
-                if(player.p3.patternLn[4].size() == 5) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(5, player.p3);
-                    }
                 }
 
                 if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p3, "black");
                 }
-                if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1210 && MainAzul.mouseY <= 450) {
+                if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1110 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p3, "blue");
                 }
                 if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
@@ -480,13 +631,13 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
                 player.drawSmallBoard(g, 260);
                 player.drawSmallTokens2(g, player.p2);
-                player.drawSmallColor(g, player.p2);
+                player.drawSmallColor2(g, player.p2);
                 player.drawSmallDeductedTwo(g, player.p2);
                 g.drawString("player 2", 340, 280);
 
                 player.drawSmallBoard(g, 520);
                 player.drawSmallTokens3(g, player.p4);
-                player.drawSmallColor(g, player.p4);
+                player.drawSmallColor3(g, player.p4);
                 player.drawSmallDeductedThree(g, player.p4);
                 g.drawString("player 4", 600, 280);
 
@@ -569,42 +720,87 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
-                if(player.p4.patternLn[0].size() == 1) {
+                if(factory.factEmpty()) {
                     g.fillRect(530, 380, 60, 60);
                     if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(1, player.p4);
+                        if(player.p1.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p1);
+                        }
+                        if(player.p1.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p1);
+                        }
+                        if(player.p1.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p1);
+                        }
+                        if(player.p1.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p1);
+                        }
+                        if(player.p1.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p1);
+                        }
+
+                        if(player.p2.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p2);
+                        }
+                        if(player.p2.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p2);
+                        }
+                        if(player.p2.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p2);
+                        }
+                        if(player.p2.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p2);
+                        }
+                        if(player.p2.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p2);
+                        }
+
+                        if(player.p3.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p3);
+                        }
+                        if(player.p3.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p3);
+                        }
+                        if(player.p3.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p3);
+                        }
+                        if(player.p3.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p3);
+                        }
+                        if(player.p3.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p3);
+                        }
+
+                        if(player.p4.patternLn[0].size() == 1) {
+                            main.moveTokens(1, player.p4);
+                        }
+                        if(player.p4.patternLn[1].size() == 2) {
+                            main.moveTokens(2, player.p4);
+                        }
+                        if(player.p4.patternLn[2].size() == 3) {
+                            main.moveTokens(3, player.p4);
+                        }
+                        if(player.p4.patternLn[3].size() == 4) {
+                            main.moveTokens(4, player.p4);
+                        }
+                        if(player.p4.patternLn[4].size() == 5) {
+                            main.moveTokens(5, player.p4);
+                        }
+                        if(player.p4.gameOver()) {
+                            //show winner screen
+                        } else {
+                            reset();
+                        }
                     }
+
                     
-                }
-                if(player.p4.patternLn[1].size() == 2) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(2, player.p4);
-                    }
-                }
-                if(player.p4.patternLn[2].size() == 3) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(3, player.p4);
-                    }
-                }
-                if(player.p4.patternLn[3].size() == 4) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(4, player.p4);
-                    }
-                }
-                if(player.p4.patternLn[4].size() == 5) {
-                    g.fillRect(530, 380, 60, 60);
-                    if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
-                        main.moveTokens(5, player.p4);
-                    }
+                    
                 }
 
                 if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p4, "black");
                 }
-                if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1210 && MainAzul.mouseY <= 450) {
+                if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1110 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p4, "blue");
                 }
                 if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
@@ -627,13 +823,13 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
                 player.drawSmallBoard(g, 260);
                 player.drawSmallTokens2(g, player.p2);
-                player.drawSmallColor(g, player.p2);
+                player.drawSmallColor2(g, player.p2);
                 player.drawSmallDeductedTwo(g, player.p2);
                 g.drawString("player 2", 340, 280);
 
                 player.drawSmallBoard(g, 520);
                 player.drawSmallTokens3(g, player.p3);
-                player.drawSmallColor(g, player.p3);
+                player.drawSmallColor3(g, player.p3);
                 player.drawSmallDeductedThree(g, player.p3);
                 g.drawString("player 3", 600, 280);
 
@@ -646,6 +842,72 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
         repaint();
 
     }
+    // private int calcPoints(Player p) {
+    //     Token tempL = null;
+    //     Token tempR = null;
+    //     Token tempU = null;
+    //     Token tempD = null;
+    //     int pts = 0;
+        
+    //     for(int i = 0; i < p.board.length; i++) {
+            
+    //         for(int j = 0; j < p.board[i].length; j++) {
+            
+    //             int posL = 1;
+    //             int posR = 1;
+    //             int posU = 1;
+    //             int posD = 1;
+    //             if(p.board[i][j] != null) {
+    //                 pts++;
+    //                 if(j != 0) {
+    //                     tempL = p.board[i][j-posL];
+    //                     posL++;
+    //                 }
+    //                 if(j != 4) {
+    //                     tempR = p.board[i][j+posR];
+    //                     posR++;
+    //                 }
+    //                 if(i != 0) {
+    //                     tempU = p.board[i-posU][j];
+    //                     posU++;
+    //                 }
+    //                 if(i != 4) {
+    //                     tempD = p.board[i+posD][j];
+    //                     posD++;
+    //                 }
+    //                 while(tempL != null && j-posL != -1) {
+    //                     pts++;
+    //                     if(j-posL != -1) {
+    //                         tempL = p.board[i][j-posL];
+    //                         posL++;
+    //                     }
+    //                 }
+    //                 while(tempR != null && j + posR != 5) {
+    //                     pts++;
+    //                     if(j + posR != 5) {
+    //                         tempR = p.board[i][j+posR];
+    //                         posR++;
+    //                     }
+    //                 }
+    //                 while(tempU != null) {
+    //                     pts++;
+    //                     if(i - posU != -1) {
+    //                         tempU = p.board[i-posU][j];
+    //                         posU++;
+    //                     }
+    //                 }
+    //                 while(tempD != null) {
+    //                     pts++;
+    //                     if(i + posD != 5) {
+    //                         tempD = p.board[i+posD][j];
+    //                         posD++;
+    //                     }
+    //                 }
+    //             }
+    //         }
+    //     }
+    //     return pts;
+    // }
     @Override
     public void mouseClicked(java.awt.event.MouseEvent e) {
         MainAzul.mouseX = e.getX();
@@ -750,5 +1012,62 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
     public void addNotify() {
         super.addNotify();
         requestFocus();
+    }
+
+    public void reset() {
+        for(int i = 0; i < player.p1.deducted.size(); i++) {
+            if(player.p1.deducted.get(i).type != "minus") {
+                MainAzul.discarded.add(player.p1.deducted.get(i));
+            } else {
+                player.p1.pTurn = true;
+                player.p2.pTurn = false;
+                player.p3.pTurn = false;
+                player.p4.pTurn = false;
+            }
+        }
+        for(int i = 0; i < player.p2.deducted.size(); i++) {
+            if(player.p2.deducted.get(i).type != "minus") {
+                MainAzul.discarded.add(player.p2.deducted.get(i));
+            } else {
+                player.p1.pTurn = false;
+                player.p2.pTurn = true;
+                player.p3.pTurn = false;
+                player.p4.pTurn = false;
+            }
+        }
+        for(int i = 0; i < player.p3.deducted.size(); i++) {
+            if(player.p3.deducted.get(i).type != "minus") {
+                MainAzul.discarded.add(player.p3.deducted.get(i));
+            } else {
+                player.p1.pTurn = false;
+                player.p2.pTurn = false;
+                player.p3.pTurn = true;
+                player.p4.pTurn = false;
+            }
+        }
+        for(int i = 0; i < player.p4.deducted.size(); i++) {
+            if(player.p4.deducted.get(i).type != "minus") {
+                MainAzul.discarded.add(player.p4.deducted.get(i));
+            } else {
+                player.p1.pTurn = false;
+                player.p2.pTurn = false;
+                player.p3.pTurn = false;
+                player.p4.pTurn = true;
+            }
+        }
+        player.p1.deducted = new ArrayList<>();
+        player.p2.deducted = new ArrayList<>();
+        player.p3.deducted = new ArrayList<>();
+        player.p4.deducted = new ArrayList<>();
+
+        factory.f1.fills();
+        factory.f2.fills();
+        factory.f3.fills();
+        factory.f4.fills();
+        factory.f5.fills();
+        factory.f6.fills();
+        factory.f7.fills();
+        factory.f8.fills();
+        factory.f9.fills();
     }
 }

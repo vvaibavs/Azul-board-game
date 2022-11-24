@@ -9,7 +9,6 @@ public class MainAzul{
     public static ArrayList<Token> bag;
     public static boolean firstCenter, start;
     public static int mouseX, mouseY;
-    public static int cnt;
     public static int choice;
     public static int patternLnChoice;
     public static ArrayList<Token> center;
@@ -39,7 +38,6 @@ public class MainAzul{
             bag.add(new Token("yellow"));
         }
         Collections.shuffle(bag);
-        cnt = 0;
         choice = 0;
         patternLnChoice = 0;
     }
@@ -66,9 +64,7 @@ public class MainAzul{
 
     public void pullCenter(Player p, String type) {
         for(int i = 0; i < center.size(); i++) {
-            System.out.println("hi");
             if(center.get(i).type.equals(type)) {
-                System.out.println("hi");
                 p.temp.add(new Token(center.get(i).type));
             }
         }
@@ -117,69 +113,1101 @@ public class MainAzul{
     }
 
     public void fillBag() {
-
+        for(int i = 0; i < discarded.size(); i++) {
+            bag.add(discarded.get(i));
+        }
+        Collections.shuffle(bag);
     }
 
     public void moveTokens(int i, Player p) {
         if(i == 1) {
             if(p.patternLn[i-1].get(0).type.equals("blue")) {
                 p.board[i-1][0] = new Token("blue");
+                p.points++;
+                int x = 1;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                y = i;
+                temp = p.board[y][0];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][0];
+                    }
+                    
+                }
+
             } else if(p.patternLn[i-1].get(0).type.equals("yellow")) {
                 p.board[i-1][1] = new Token("yellow");
+                p.points++;
+                int x = 2;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                   
+                }
+
+                x=0;
+                temp = p.board[y][x];
+                while(temp != null && x >=0 ) {
+                    p.points+=1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                y = i;
+                temp = p.board[y][1];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][1];
+                    }
+                    
+                }
+
             } else if(p.patternLn[i-1].get(0).type.equals("red")) {
                 p.board[i-1][2] = new Token("red");
+                p.points++;
+
+                int x = 3;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x=1;
+                temp = p.board[y][x];
+                while(temp != null && x >=0 ) {
+                    p.points+=1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                y = i;
+                temp = p.board[y][2];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][2];
+                    }
+                    
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("black")) {
                 p.board[i-1][3] = new Token("black");
+                p.points++;
+
+                int x = 4;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 2;
+                temp = p.board[y][x];
+                while(temp != null && x >=0 ) {
+                    p.points+=1;
+                    x--;
+
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+                y = i;
+                temp = p.board[y][3];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][3];
+                    }
+                    
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("white")) {
                 p.board[i-1][4] = new Token("white");
+                p.points++;
+
+                int x = 3;
+                int y = i-1;
+
+                Token temp = p.board[y][x];
+                while(temp != null && x >=0 ) {
+                    p.points+=1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                y = i;
+                temp = p.board[y][4];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if( y < 5 ) {
+                        temp = p.board[y][4];
+                    }
+                    
+                }
             }
         } else if(i == 2) {
             if(p.patternLn[i-1].get(0).type.equals("white")) {
                 p.board[i-1][0] = new Token("white");
+                p.points++;
+
+                int x = 1;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if( x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                y = i;
+                temp = p.board[y][0];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][0];
+                    }
+                    
+                }
+
+                y = 0;
+                temp = p.board[y][0];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][0];
+                    }
+                    
+                }
+
+
+
+                discarded.add(new Token("white"));
+           
             } else if(p.patternLn[i-1].get(0).type.equals("blue")) {
                 p.board[i-1][1] = new Token("blue");
+                p.points++;
+
+                int x = 2;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 0;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][1];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][1];
+                    }
+                    
+                }
+
+                y = 0;
+                temp = p.board[y][1];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][1];
+                    }
+                    
+                }
+
+
+                discarded.add(new Token("blue"));
+            
             } else if(p.patternLn[i-1].get(0).type.equals("yellow")) {
+               
                 p.board[i-1][2] = new Token("yellow");
+                p.points++;
+
+                int x = 3;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 1;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][2];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][2];
+                    }
+                    
+                }
+
+                y = 0;
+                temp = p.board[y][2];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][2];
+                    }
+                    
+                }
+
+                discarded.add(new Token("yellow"));
             } else if(p.patternLn[i-1].get(0).type.equals("red")) {
                 p.board[i-1][3] = new Token("red");
+                p.points++;
+
+                int x = 4;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 2;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][1];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][3];
+                    }
+                    
+                }
+
+                y = 0;
+                temp = p.board[y][1];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][3];
+                    }
+                    
+                }
+
+                discarded.add(new Token("red"));
             } else if(p.patternLn[i-1].get(0).type.equals("black")) {
                 p.board[i-1][4] = new Token("black");
+                p.points++;
+
+                int y = i-1;
+                int x = 3;
+                Token temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][4];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][4];
+                    }
+                    
+                }
+
+                y = 0;
+                temp = p.board[y][4];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][4];
+                    }
+                    
+                }
+
+                discarded.add(new Token("black"));
             }
         } else if(i == 3) {
             if(p.patternLn[i-1].get(0).type.equals("black")) {
                 p.board[i-1][0] = new Token("black");
+                p.points++;
+
+                int x = 1;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                y = i;
+                temp = p.board[y][0];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][0];
+                    }
+                    
+                }
+
+                y = 1;
+                temp = p.board[y][0];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][0];
+                    }
+                    
+                }
+
+
+
+                for(int z = 0; i < 2; i++) {
+                    discarded.add(new Token("black"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("white")) {
                 p.board[i-1][1] = new Token("white");
+                p.points++;
+
+                int x = 2;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 0;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][1];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][1];
+                    }
+                    
+                }
+
+                y = 1;
+                temp = p.board[y][1];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][1];
+                    }
+                    
+                }
+
+                for(int z = 0; i < 2; i++) {
+                    discarded.add(new Token("white"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("blue")) {
                 p.board[i-1][2] = new Token("blue");
+                p.points++;
+
+                int x = 3;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 1;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][2];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][2];
+                    }
+                    
+                }
+
+                y = 1;
+                temp = p.board[y][2];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][2];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 2; i++) {
+                    discarded.add(new Token("blue"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("yellow")) {
                 p.board[i-1][3] = new Token("yellow");
+                p.points++;
+
+                int x = 4;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 2;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][3];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][3];
+                    }
+                    
+                }
+
+                y = 1;
+                temp = p.board[y][3];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][3];
+                    }
+                    
+                }
+
+                for(int z = 0; i < 2; i++) {
+                    discarded.add(new Token("yellow"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("red")) {
                 p.board[i-1][4] = new Token("red");
+                p.points++;
+
+
+                int y = i-1;
+                int x = 3;
+                Token temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][4];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][4];
+                    }
+                    
+                }
+
+                y = 1;
+                temp = p.board[y][4];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][4];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 2; i++) {
+                    discarded.add(new Token("red"));
+                }
             }
         } else if(i == 4) {
             if(p.patternLn[i-1].get(0).type.equals("red")) {
                 p.board[i-1][0] = new Token("red");
+                p.points++;
+
+                int x = 0;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                y = i;
+                temp = p.board[y][0];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][0];
+                    }
+                    
+                }
+
+                y = 2;
+                temp = p.board[y][0];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][0];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 3; i++) {
+                    discarded.add(new Token("red"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("black")) {
                 p.board[i-1][1] = new Token("black");
+                p.points++;
+
+                int x = 2;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 0;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][1];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][1];
+                    }
+                    
+                }
+
+                y = 2;
+                temp = p.board[y][1];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][1];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 3; i++) {
+                    discarded.add(new Token("black"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("white")) {
                 p.board[i-1][2] = new Token("white");
+                p.points++;
+
+                int x = 3;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 1;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][2];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][2];
+                    }
+                    
+                }
+
+                y = 2;
+                temp = p.board[y][2];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][2];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 3; i++) {
+                    discarded.add(new Token("white"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("blue")) {
                 p.board[i-1][3] = new Token("blue");
+                p.points++;
+
+                int x = 4;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 2;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][3];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][3];
+                    }
+                    
+                }
+
+                y = 2;
+                temp = p.board[y][3];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][3];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 3; i++) {
+                    discarded.add(new Token("blue"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("yellow")) {
                 p.board[i-1][4] = new Token("yellow");
+                p.points++;
+
+                int y = i-1;
+                int x = 3;
+                Token temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = i;
+                temp = p.board[y][4];
+                while(temp != null && y < 5) {
+                    p.points++;
+                    y++;
+                    if(y < 5) {
+                        temp = p.board[y][4];
+                    }
+                    
+                }
+
+                y = 2;
+                temp = p.board[y][4];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][4];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 3; i++) {
+                    discarded.add(new Token("yellow"));
+                }
             }
+            
         } else if(i == 5) {
             if(p.patternLn[i-1].get(0).type.equals("yellow")) {
                 p.board[i-1][0] = new Token("yellow");
+                p.points++;
+
+                int x = 0;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                y = 3;
+                temp = p.board[y][0];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][0];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 4; i++) {
+                    discarded.add(new Token("yellow"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("red")) {
                 p.board[i-1][1] = new Token("red");
+                p.points++;
+
+                int x = 2;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 0;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = 3;
+                temp = p.board[y][1];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][1];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 4; i++) {
+                    discarded.add(new Token("red"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("black")) {
                 p.board[i-1][2] = new Token("black");
+                p.points++;
+
+                int x = 3;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 1;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = 3;
+                temp = p.board[y][2];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][2];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 4; i++) {
+                    discarded.add(new Token("black"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("white")) {
                 p.board[i-1][3] = new Token("white");
+                p.points++;
+
+                int x = 4;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x < 5) {
+                    p.points+=1;
+                    x++;
+                    if(x < 5) {
+                        temp = p.board[y][x];
+                    }
+                    
+                }
+
+                x = 2;
+                temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = 3;
+                temp = p.board[y][3];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][3];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 4; i++) {
+                    discarded.add(new Token("white"));
+                }
             } else if(p.patternLn[i-1].get(0).type.equals("blue")) {
                 p.board[i-1][4] = new Token("blue");
+                p.points++;
+
+                int x = 3;
+                int y = i-1;
+                Token temp = p.board[y][x];
+                while(temp != null && x >= 0) {
+                    p.points += 1;
+                    x--;
+                    if(x >= 0) {
+                        temp = p.board[y][x];
+                    }
+                }
+
+                y = 3;
+                temp = p.board[y][3];
+                while(temp != null && y >= 0) {
+                    p.points++;
+                    y--;
+
+                    if(y >= 0) {
+                        temp = p.board[y][1];
+                    }
+                    
+                }
+
+
+                for(int z = 0; i < 4; i++) {
+                    discarded.add(new Token("blue"));
+                }
             }
         }
         p.patternLn[i-1] = new ArrayList<>();

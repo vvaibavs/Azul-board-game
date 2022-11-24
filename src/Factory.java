@@ -35,6 +35,12 @@ public class Factory {
                 yellowAmt += 1;
                 MainAzul.bag.remove(i);
             }
+            if(MainAzul.bag.size() == 0) {
+                while(MainAzul.bag.size() <= 100) {
+                    MainAzul.bag.add(MainAzul.discarded.get(MainAzul.discarded.size()-1));
+                    MainAzul.discarded.remove(MainAzul.discarded.size()-1);
+                }
+            }
         }
         if(blackAmt > 0) {
             factTokens.add(new Token("black", blackAmt));
