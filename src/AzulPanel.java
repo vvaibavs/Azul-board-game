@@ -254,6 +254,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 player.drawColorBoard(g, player.p1);
 
                 
+                player.drawPoints(g, player.p1);
+
+                
 
             }
             if(player.p2.pTurn) {
@@ -450,6 +453,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
                 player.drawDeducted(g, player.p2);
                 player.drawColorBoard(g, player.p2);
+
+                player.drawPoints(g, player.p2);
+
                 
 
             }
@@ -644,6 +650,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 player.drawDeducted(g, player.p3);
                 player.drawColorBoard(g, player.p3);
 
+                player.drawPoints(g, player.p3);
+
+
             }
             if(player.p4.pTurn) {
                 g.setFont(fontsmall);
@@ -836,78 +845,16 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 player.drawDeducted(g, player.p4);
                 player.drawColorBoard(g, player.p4);
 
+                player.drawPoints(g, player.p4);
+
+
             }
         }
         factory.drawTokens(g);
         repaint();
 
     }
-    // private int calcPoints(Player p) {
-    //     Token tempL = null;
-    //     Token tempR = null;
-    //     Token tempU = null;
-    //     Token tempD = null;
-    //     int pts = 0;
-        
-    //     for(int i = 0; i < p.board.length; i++) {
-            
-    //         for(int j = 0; j < p.board[i].length; j++) {
-            
-    //             int posL = 1;
-    //             int posR = 1;
-    //             int posU = 1;
-    //             int posD = 1;
-    //             if(p.board[i][j] != null) {
-    //                 pts++;
-    //                 if(j != 0) {
-    //                     tempL = p.board[i][j-posL];
-    //                     posL++;
-    //                 }
-    //                 if(j != 4) {
-    //                     tempR = p.board[i][j+posR];
-    //                     posR++;
-    //                 }
-    //                 if(i != 0) {
-    //                     tempU = p.board[i-posU][j];
-    //                     posU++;
-    //                 }
-    //                 if(i != 4) {
-    //                     tempD = p.board[i+posD][j];
-    //                     posD++;
-    //                 }
-    //                 while(tempL != null && j-posL != -1) {
-    //                     pts++;
-    //                     if(j-posL != -1) {
-    //                         tempL = p.board[i][j-posL];
-    //                         posL++;
-    //                     }
-    //                 }
-    //                 while(tempR != null && j + posR != 5) {
-    //                     pts++;
-    //                     if(j + posR != 5) {
-    //                         tempR = p.board[i][j+posR];
-    //                         posR++;
-    //                     }
-    //                 }
-    //                 while(tempU != null) {
-    //                     pts++;
-    //                     if(i - posU != -1) {
-    //                         tempU = p.board[i-posU][j];
-    //                         posU++;
-    //                     }
-    //                 }
-    //                 while(tempD != null) {
-    //                     pts++;
-    //                     if(i + posD != 5) {
-    //                         tempD = p.board[i+posD][j];
-    //                         posD++;
-    //                     }
-    //                 }
-    //             }
-    //         }
-    //     }
-    //     return pts;
-    // }
+
     @Override
     public void mouseClicked(java.awt.event.MouseEvent e) {
         MainAzul.mouseX = e.getX();

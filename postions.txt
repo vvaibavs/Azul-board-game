@@ -15,3 +15,9 @@ ImageIO.write(im, "PNG", new File("shot.png"));
 deduction squares:
 25 779
 +45
+
+score row coordinates:
+411
+438
+465
+494

@@ -259,7 +259,18 @@ public class PlayerPanel {
     }
 
     public void drawPoints(Graphics g, Player p) {
-        
+        if(p.points > 0 && p.points <= 20) {
+            g.drawImage(pointercounter, pointerColumn(p.points), 385, 20, 20, null);
+        } else if(p.points > 20 && p.points <= 40) {
+            g.drawImage(pointercounter, pointerColumn(p.points-20), 411, 20, 20, null);
+        } else if(p.points > 40 && p.points <= 60) {
+            g.drawImage(pointercounter, pointerColumn(p.points-40), 438, 20, 20, null);
+        } else if(p.points > 60 && p.points <= 80) {
+            g.drawImage(pointercounter, pointerColumn(p.points-60), 465, 20, 20, null);
+        } else if(p.points > 80 && p.points <= 100) {
+            g.drawImage(pointercounter, pointerColumn(p.points-80), 494, 20, 20, null);
+        }
+
     }
 
 
@@ -313,4 +324,5 @@ public class PlayerPanel {
         }
             return 33 + ((x - 1) * 22);
     }
+
 }
