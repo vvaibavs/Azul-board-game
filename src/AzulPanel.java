@@ -15,7 +15,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
     public FactoryPanel factory;
     public MainAzul main;
     // public LittleBoardPanel little1, little2, little3, little4;
-    private BufferedImage background, black, blue, red, white, yellow,outline,normal;
+    private BufferedImage background, black, blue, red, white, yellow,outline,normal, next;
     public int patternLine;
     public AzulPanel() {
 
@@ -31,6 +31,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
             yellow = ImageIO.read(new File("assets/yellow.jpg"));
             outline = ImageIO.read(new File("assets/factoryoutline.png"));
             normal = ImageIO.read(new File("assets/default.png"));
+            next = ImageIO.read(new File("assets/Next-Button-Transparent-Image.png"));
         } catch (Exception e) {
             System.out.println("failure");
         }
@@ -50,6 +51,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
             g.drawImage(background, 0, 0, getWidth(), getHeight(), null);
             factory.drawFactories(g);
             factory.drawCenter(g);
+            g.drawImage(next, 1430, 763, 200, 100, null);
             if(player.p1.pTurn) {
                 int x = 0;
                 int y = 0;
@@ -862,7 +864,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
         System.out.println(MainAzul.mouseX + " " + MainAzul.mouseY);
         if(MainAzul.mouseX >= 629 && MainAzul.mouseY >= 636 && MainAzul.mouseX <= 974 && MainAzul.mouseY <= 735) {
             MainAzul.start = false;
-        } else if(MainAzul.mouseX >= 1477 && MainAzul.mouseY >= 763 && MainAzul.mouseX <= 1600 && MainAzul.mouseY <= 900) {
+        } else if(MainAzul.mouseX >= 1430 && MainAzul.mouseY >= 763 && MainAzul.mouseX <= 1600 && MainAzul.mouseY <= 900) {
             MainAzul.nextPlayer(player.p1, player.p2, player.p3, player.p4);
         } 
         repaint();
