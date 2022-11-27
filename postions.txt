@@ -21,5 +21,3 @@ score row coordinates:
 438
 465
 494
-
-1477 763

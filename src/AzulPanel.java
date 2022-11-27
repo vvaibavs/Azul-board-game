@@ -68,7 +68,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 
                 if(MainAzul.tempFact == null && player.p1.temp.size() == 0) {
                     g.setFont(fontsmall);
-                    g.drawString("click on key corresponding to the number of the factory", 230,  330);
+                    g.drawString("use number keys to choose factories", 230,  330);
                     
                 } else if(MainAzul.tempFact != null) {
                     g.setFont(fontsmall);
@@ -275,7 +275,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g.drawString("Current Player: 2", 5 , 330); 
                 if(MainAzul.tempFact == null && player.p2.temp.size() == 0) {
                     g.setFont(fontsmall);
-                    g.drawString("click on key corresponding to the number of the factory", 230,  330);
+                    g.drawString("use number keys to choose factories", 230,  330);
                     
                 } else if(MainAzul.tempFact != null) {
                     g.setFont(fontsmall);
@@ -475,7 +475,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g.drawString("Current Player: 3", 5 , 330); 
                 if(MainAzul.tempFact == null && player.p3.temp.size() == 0) {
                     g.setFont(fontsmall);
-                    g.drawString("click on key corresponding to the number of the factory", 230,  330);
+                    g.drawString("use number keys to choose factories", 230,  330);
                     
                 } else if(MainAzul.tempFact != null) {
                     g.drawString("pick tokens in selected factory", 230,  330);
@@ -671,7 +671,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g.drawString("Current Player: 4", 5 , 330); 
                 if(MainAzul.tempFact == null && player.p4.temp.size() == 0) {
                     g.setFont(fontsmall);
-                    g.drawString("click on key corresponding to the number of the factory", 230,  330);
+                    g.drawString("use number keys to choose factories", 230,  330);
                     
                 } else if(MainAzul.tempFact != null) {
                     g.drawString("pick tokens in selected factory", 230,  330);
