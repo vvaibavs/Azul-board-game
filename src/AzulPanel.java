@@ -1,9 +1,7 @@
 import javax.swing.*;
-
 import java.awt.*;
 import java.awt.image.*;
 import javax.imageio.ImageIO;
-import javax.swing.*;
 import java.io.*;
 import java.util.ArrayList;
 import java.awt.event.MouseListener;
@@ -14,14 +12,15 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
     public PlayerPanel player;
     public FactoryPanel factory;
     public MainAzul main;
-    // public LittleBoardPanel little1, little2, little3, little4;
     private BufferedImage background, black, blue, red, white, yellow,outline,normal, next;
     public int patternLine;
+    public GuidePanel guide;
     public AzulPanel() {
 
         start = new StartPanel();
         player = new PlayerPanel();
         factory = new FactoryPanel();
+        guide = new GuidePanel();
         try {
             background = ImageIO.read(new File("assets/background.jpg"));
             black = ImageIO.read(new File("assets/black.jpg"));
@@ -47,7 +46,19 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
         g.setFont(fontsmall);
         if(MainAzul.start) {
             start.drawMainMenu(g);
-        } else {
+            if(MainAzul.mouseX >= 700 && MainAzul.mouseY >= 750 && MainAzul.mouseX <= 895 && MainAzul.mouseY <= 818) {
+                MainAzul.start = false;
+                MainAzul.guide = true;
+            }
+        } else if(MainAzul.guide) {
+            guide.drawScreens(g);
+            if(MainAzul.mouseX >= 1508 && MainAzul.mouseY >= 0 && MainAzul.mouseX <= 1600 && MainAzul.mouseY <= 72) {
+                MainAzul.guide = false;
+                MainAzul.start = true;
+                MainAzul.mouseX = 0;
+                MainAzul.mouseY = 0;
+            }
+        } else if(MainAzul.game){
             g.drawImage(background, 0, 0, getWidth(), getHeight(), null);
             factory.drawFactories(g);
             factory.drawCenter(g);
@@ -60,7 +71,6 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 g.fillRect(506, 740, 380, 80);
                 g.setColor(Color.BLACK);
                 Graphics2D g2 = (Graphics2D) g;
-                Stroke oldStroke = g2.getStroke();
                 g2.setStroke(new BasicStroke(3));
                 g.drawRect(506, 740, 380, 80);
                 g.setFont(fontsmall);
@@ -851,8 +861,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
 
             }
+            factory.drawTokens(g);
         }
-        factory.drawTokens(g);
+        
         repaint();
 
     }
@@ -864,6 +875,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
         System.out.println(MainAzul.mouseX + " " + MainAzul.mouseY);
         if(MainAzul.mouseX >= 629 && MainAzul.mouseY >= 636 && MainAzul.mouseX <= 974 && MainAzul.mouseY <= 735) {
             MainAzul.start = false;
+            MainAzul.game = true;
         } else if(MainAzul.mouseX >= 1430 && MainAzul.mouseY >= 763 && MainAzul.mouseX <= 1600 && MainAzul.mouseY <= 900) {
             MainAzul.nextPlayer(player.p1, player.p2, player.p3, player.p4);
         } 

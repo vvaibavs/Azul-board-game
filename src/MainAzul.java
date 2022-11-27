@@ -7,7 +7,7 @@ public class MainAzul{
     public static ArrayList<Token> discarded;
     public static Factory tempFact;
     public static ArrayList<Token> bag;
-    public static boolean firstCenter, start;
+    public static boolean firstCenter, start, guide, game;
     public static int mouseX, mouseY;
     public static int choice;
     public static int patternLnChoice;
@@ -40,6 +40,8 @@ public class MainAzul{
         Collections.shuffle(bag);
         choice = 0;
         patternLnChoice = 0;
+        guide = false;
+        game = false;
     }
 
     public void choicePull(Player p, String type) {
