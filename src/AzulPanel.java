@@ -89,16 +89,26 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     g.drawImage(outline, x, y, 220, 220, null);   
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
                         main.choicePull(player.p1, "black");
+                        MainAzul.player1 = false;
+                        MainAzul.player2 = true;
                     } else if(MainAzul.mouseX >= x+90 && MainAzul.mouseY >= y+25 && MainAzul.mouseX <= x+140 && MainAzul.mouseY <= y+75) {
                         main.choicePull(player.p1, "blue");
+                        MainAzul.player1 = false;
+                        MainAzul.player2 = true;
                     } else if(MainAzul.mouseX >= x+155 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+205 && MainAzul.mouseY <= y+105) {
                         main.choicePull(player.p1, "red");
+                        MainAzul.player1 = false;
+                        MainAzul.player2 = true;
                     } else if(MainAzul.mouseX >= x+55 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+105 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p1, "white");
+                        MainAzul.player1 = false;
+                        MainAzul.player2 = true;
                     } else if(MainAzul.mouseX >= x+135 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+185 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p1, "yellow");
+                        MainAzul.player1 = false;
+                        MainAzul.player2 = true;
                     }
-                   //repaint();
+                    MainAzul.player1 = false;
                 } else if(player.p1.temp.size() != 0){ 
                     g.setFont(fontsmall);
                     g.drawString("pattern line", 230,  330);
@@ -226,18 +236,28 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
                 if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p1, "black");
+                    MainAzul.player1 = false;
+                    MainAzul.player2 = true;
                 }
                 if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1110 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p1, "blue");
+                    MainAzul.player1 = false;
+                    MainAzul.player2 = true;
                 }
                 if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p1, "red");
+                    MainAzul.player1 = false;
+                    MainAzul.player2 = true;
                 }
                 if(MainAzul.mouseX >= 1180 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1230 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p1, "white");
+                    MainAzul.player1 = false;
+                    MainAzul.player2 = true;
                 }
                 if(MainAzul.mouseX >= 1240 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1290 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p1, "yellow");
+                    MainAzul.player1 = false;
+                    MainAzul.player2 = true;
                 }
 
 
@@ -297,15 +317,26 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     g.drawImage(outline, x, y, 220, 220, null);   
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
                         main.choicePull(player.p2, "black");
+                        MainAzul.player2 = false;
+                        MainAzul.player3 = true;
                     } else if(MainAzul.mouseX >= x+90 && MainAzul.mouseY >= y+25 && MainAzul.mouseX <= x+140 && MainAzul.mouseY <= y+75) {
                         main.choicePull(player.p2, "blue");
+                        MainAzul.player2 = false;
+                        MainAzul.player3 = true;
                     } else if(MainAzul.mouseX >= x+155 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+205 && MainAzul.mouseY <= y+105) {
                         main.choicePull(player.p2, "red");
+                        MainAzul.player2 = false;
+                        MainAzul.player3 = true;
                     } else if(MainAzul.mouseX >= x+55 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+105 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p2, "white");
+                        MainAzul.player2 = false;
+                        MainAzul.player3 = true;
                     } else if(MainAzul.mouseX >= x+135 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+185 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p2, "yellow");
+                        MainAzul.player2 = false;
+                        MainAzul.player3 = true;
                     }
+                    MainAzul.player2 = false;
                 } else if(player.p2.temp.size() != 0){ 
                     g.setFont(fontsmall);
                     g.drawString("pattern line", 230,  330);
@@ -427,19 +458,30 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
                 if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p2, "black");
+                    MainAzul.player2 = false;
+                    MainAzul.player3 = true;
                 }
                 if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1110 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p2, "blue");
+                    MainAzul.player2 = false;
+                    MainAzul.player3 = true;
                 }
                 if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p2, "red");
+                    MainAzul.player2 = false;
+                    MainAzul.player3 = true;
                 }
                 if(MainAzul.mouseX >= 1180 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1230 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p2, "white");
+                    MainAzul.player2 = false;
+                    MainAzul.player3 = true;
                 }
                 if(MainAzul.mouseX >= 1240 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1290 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p2, "yellow");
+                    MainAzul.player2 = false;
+                    MainAzul.player3 = true;
                 }
+                
 
                 
 
@@ -495,14 +537,24 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     g.drawImage(outline, x, y, 220, 220, null);   
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
                         main.choicePull(player.p3, "black");
+                        MainAzul.player3 = false;
+                        MainAzul.player4 = true;
                     } else if(MainAzul.mouseX >= x+90 && MainAzul.mouseY >= y+25 && MainAzul.mouseX <= x+140 && MainAzul.mouseY <= y+75) {
                         main.choicePull(player.p3, "blue");
+                        MainAzul.player3 = false;
+                        MainAzul.player4 = true;
                     } else if(MainAzul.mouseX >= x+155 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+205 && MainAzul.mouseY <= y+105) {
                         main.choicePull(player.p3, "red");
+                        MainAzul.player3 = false;
+                        MainAzul.player4 = true;
                     } else if(MainAzul.mouseX >= x+55 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+105 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p3, "white");
+                        MainAzul.player3 = false;
+                        MainAzul.player4 = true;
                     } else if(MainAzul.mouseX >= x+135 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+185 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p3, "yellow");
+                        MainAzul.player3 = false;
+                        MainAzul.player4 = true;
                     }
                     
                 } else if(player.p3.temp.size() != 0){ 
@@ -624,18 +676,28 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
                 if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p3, "black");
+                    MainAzul.player3 = false;
+                    MainAzul.player4 = true;
                 }
                 if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1110 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p3, "blue");
+                    MainAzul.player3 = false;
+                    MainAzul.player4 = true;
                 }
                 if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p3, "red");
+                    MainAzul.player3 = false;
+                    MainAzul.player4 = true;
                 }
                 if(MainAzul.mouseX >= 1180 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1230 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p3, "white");
+                    MainAzul.player3 = false;
+                    MainAzul.player4 = true;
                 }
                 if(MainAzul.mouseX >= 1240 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1290 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p3, "yellow");
+                    MainAzul.player3 = false;
+                    MainAzul.player4 = true;
                 }
 
                 
@@ -691,16 +753,25 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     g.drawImage(outline, x, y, 220, 220, null);
                     if(MainAzul.mouseX >= x+25 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+75 && MainAzul.mouseY <= y+105) { // add the if statements from choice pull in here
                         main.choicePull(player.p4, "black");
+                        MainAzul.player4 = false;
+                        MainAzul.player1 = true;
                     } else if(MainAzul.mouseX >= x+90 && MainAzul.mouseY >= y+25 && MainAzul.mouseX <= x+140 && MainAzul.mouseY <= y+75) {
                         main.choicePull(player.p4, "blue");
+                        MainAzul.player4 = false;
+                        MainAzul.player1 = true;
                     } else if(MainAzul.mouseX >= x+155 && MainAzul.mouseY >= y+65 && MainAzul.mouseX <= x+205 && MainAzul.mouseY <= y+105) {
                         main.choicePull(player.p4, "red");
+                        MainAzul.player4 = false;
+                        MainAzul.player1 = true;
                     } else if(MainAzul.mouseX >= x+55 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+105 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p4, "white");
+                        MainAzul.player4 = false;
+                        MainAzul.player1 = true;
                     } else if(MainAzul.mouseX >= x+135 && MainAzul.mouseY >= y+135 && MainAzul.mouseX <= x+185 && MainAzul.mouseY <= y+185) {
                         main.choicePull(player.p4, "yellow");
+                        MainAzul.player4 = false;
+                        MainAzul.player1 = true;
                     }
-                    
                 } else if(player.p4.temp.size() != 0){ 
                     g.setFont(fontsmall);
                     g.drawString("pattern line", 230,  330);
@@ -820,18 +891,28 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
                 if(MainAzul.mouseX >= 1000 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1050 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p4, "black");
+                    MainAzul.player4 = false;
+                    MainAzul.player1 = true;
                 }
                 if(MainAzul.mouseX >= 1060 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1110 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p4, "blue");
+                    MainAzul.player4 = false;
+                    MainAzul.player1 = true;
                 }
                 if(MainAzul.mouseX >= 1120 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1170 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p4, "red");
+                    MainAzul.player4 = false;
+                    MainAzul.player1 = true;
                 }
                 if(MainAzul.mouseX >= 1180 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1230 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p4, "white");
+                    MainAzul.player4 = false;
+                    MainAzul.player1 = true;
                 }
                 if(MainAzul.mouseX >= 1240 && MainAzul.mouseY >= 400 && MainAzul.mouseX <= 1290 && MainAzul.mouseY <= 450) {
                     main.pullCenter(player.p4, "yellow");
+                    MainAzul.player4 = false;
+                    MainAzul.player1 = true;
                 }
 
                 g.setFont(fontsmall);
@@ -904,13 +985,13 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
     @Override
     public void keyTyped(KeyEvent e) {
         boolean temp = false;
-        if(player.p1.pTurn && player.p1.temp.size() == 0) {
+        if(player.p1.pTurn && player.p1.temp.size() == 0 && MainAzul.player1) {
             temp = true;
-        } else if(player.p2.pTurn && player.p2.temp.size() == 0) {
+        } else if(player.p2.pTurn && player.p2.temp.size() == 0 && MainAzul.player2) {
             temp = true;
-        } else if(player.p3.pTurn && player.p3.temp.size() == 0) {
+        } else if(player.p3.pTurn && player.p3.temp.size() == 0 && MainAzul.player3) {
             temp = true;
-        } else if(player.p4.pTurn && player.p4.temp.size() == 0) {
+        } else if(player.p4.pTurn && player.p4.temp.size() == 0 && MainAzul.player4) {
             temp = true;
         }
         if(temp) {

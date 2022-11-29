@@ -12,6 +12,7 @@ public class MainAzul{
     public static int choice;
     public static int patternLnChoice;
     public static ArrayList<Token> center;
+    public static boolean player1, player2, player3, player4;
 
     public MainAzul() {
         discarded = new ArrayList<>();
@@ -42,6 +43,11 @@ public class MainAzul{
         patternLnChoice = 0;
         guide = false;
         game = false;
+
+        player1 = true;
+        player2 = false;
+        player3 = false;
+        player4 = false;
     }
 
     public void choicePull(Player p, String type) {
@@ -62,6 +68,8 @@ public class MainAzul{
         tempFact = null;
         mouseX = 0;
         mouseY = 0;
+
+        
     }
 
     public void pullCenter(Player p, String type) {
