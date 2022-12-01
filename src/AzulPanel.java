@@ -82,7 +82,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     
                 } else if(MainAzul.tempFact != null) {
                     g.setFont(fontsmall);
-                    g.drawString("pick tokens in selected factory", 230,  330);
+                    g.drawString("pick tokens with mouse in selected factory", 230,  330);
                     
                     x = MainAzul.tempFact.getX();
                     y = MainAzul.tempFact.getY();
@@ -111,7 +111,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     MainAzul.player1 = false;
                 } else if(player.p1.temp.size() != 0){ 
                     g.setFont(fontsmall);
-                    g.drawString("pattern line", 230,  330);
+                    g.drawString("use number keys to select pattern line", 230,  330);
                     
 
                     if(patternLine != 0) {
@@ -309,7 +309,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     
                 } else if(MainAzul.tempFact != null) {
                     g.setFont(fontsmall);
-                    g.drawString("pick tokens in selected factory", 230,  330);
+                    g.drawString("pick tokens with mouse in selected factory", 230,  330);
                     
                     x = MainAzul.tempFact.getX();
                     y = MainAzul.tempFact.getY();
@@ -339,7 +339,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     MainAzul.player2 = false;
                 } else if(player.p2.temp.size() != 0){ 
                     g.setFont(fontsmall);
-                    g.drawString("pattern line", 230,  330);
+                    g.drawString("use number keys to select pattern line", 230,  330);
                     
 
                     if(patternLine != 0) {
@@ -530,7 +530,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     g.drawString("use number keys to choose factories", 230,  330);
                     
                 } else if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens in selected factory", 230,  330);
+                    g.drawString("pick tokens with mouse in selected factory", 230,  330);
                     x = MainAzul.tempFact.getX();
                     y = MainAzul.tempFact.getY();
                     g.drawImage(outline, x, y, 220, 220, null);   
@@ -559,7 +559,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     
                 } else if(player.p3.temp.size() != 0){ 
                     g.setFont(fontsmall);
-                    g.drawString("pattern line", 230,  330);
+                    g.drawString("use number keys to select pattern line", 230,  330);
                     
                     
                     if(patternLine != 0) {
@@ -746,7 +746,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     g.drawString("use number keys to choose factories", 230,  330);
                     
                 } else if(MainAzul.tempFact != null) {
-                    g.drawString("pick tokens in selected factory", 230,  330);
+                    g.drawString("pick tokens with mouse in selected factory", 230,  330);
                     x = MainAzul.tempFact.getX();
                     y = MainAzul.tempFact.getY();
                     g.drawImage(outline, x, y, 220, 220, null);
@@ -774,7 +774,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 } else if(player.p4.temp.size() != 0){ 
                     g.setFont(fontsmall);
-                    g.drawString("pattern line", 230,  330);
+                    g.drawString("use number keys to select pattern line", 230,  330);
                     
 
                     if(patternLine != 0) {
