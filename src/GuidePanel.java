@@ -50,6 +50,10 @@ public class GuidePanel {
             cnt+=1;
             MainAzul.mouseX = 0;
             MainAzul.mouseY = 0;
+        } else if(MainAzul.mouseX >= 329 && MainAzul.mouseY >= 447 && MainAzul.mouseX <= 544 && MainAzul.mouseY <= 543 && cnt == 4) {
+            MainAzul.guide = false;
+            MainAzul.start = true;
+            cnt = 0;
         }
 
         if(MainAzul.mouseX >= 1508 && MainAzul.mouseY >= 72) {

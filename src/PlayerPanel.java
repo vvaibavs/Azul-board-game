@@ -325,4 +325,92 @@ public class PlayerPanel {
             return 33 + ((x - 1) * 22);
     }
 
+    public void calcFinal() {
+        if(MainAzul.pl1) {
+            p1.points += 2;
+            MainAzul.pl1 = false;
+        }
+        if(MainAzul.pl2) {
+            p2.points += 2;
+            MainAzul.pl2 = false;
+        }
+        if(MainAzul.pl3) {
+            p3.points += 2;
+            MainAzul.pl3 = false;
+        }
+        if(MainAzul.pl4) {
+            p4.points += 2;
+            MainAzul.pl4 = false;
+        }
+
+        p1.points += vertic(p1) * 7;
+        p2.points += vertic(p2) * 7;
+        p3.points += vertic(p3) * 7;
+        p4.points += vertic(p4) * 7;
+
+        if(diag(p1)) {
+            p1.points += 10;
+        }
+        if(reverseDiag(p1)) {
+            p1.points += 10;
+        }
+
+        if(diag(p2)) {
+            p2.points += 10;
+        }
+        if(reverseDiag(p2)) {
+            p2.points += 10;
+        }
+
+        if(diag(p3)) {
+            p3.points += 10;
+        }
+        if(reverseDiag(p3)) {
+            p3.points += 10;
+        }
+
+        if(diag(p4)) {
+            p4.points += 10;
+        }
+        if(reverseDiag(p4)) {
+            p4.points += 10;
+        }
+        
+    }
+
+    public int vertic(Player p) {
+        boolean asdf;
+        int cnt = 0;
+        for(int i = 0; i < p.board[0].length; i++) {
+            asdf = true;
+            for(int j = 0; j < p.board.length; j++) {
+                if(p.board[j][i] == null) {
+                    asdf = false;
+                }
+            }
+            if(asdf) {
+                cnt++;
+            }
+        }
+        return cnt;
+    }
+
+    public boolean diag(Player p) {
+        for(int i = 0; i < p.board.length; i++) {
+            if(p.board[i][i] == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
+    public boolean reverseDiag(Player p) {
+        for(int i = 0; i < p.board.length; i++) {
+            if(p.board[i][4-i] == null) {
+                return false;
+            }
+        }
+        return true;
+    }
+
 }

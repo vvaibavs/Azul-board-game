@@ -11,8 +11,9 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
     public StartPanel start;
     public PlayerPanel player;
     public FactoryPanel factory;
+    public EndGamePanel end;
     public MainAzul main;
-    private BufferedImage background, black, blue, red, white, yellow,outline,normal, next;
+    private BufferedImage background, black, blue, red, white, yellow,outline,normal, next, reset;
     public int patternLine;
     public GuidePanel guide;
     public AzulPanel() {
@@ -21,6 +22,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
         player = new PlayerPanel();
         factory = new FactoryPanel();
         guide = new GuidePanel();
+        end = new EndGamePanel();
         try {
             background = ImageIO.read(new File("assets/background.jpg"));
             black = ImageIO.read(new File("assets/black.jpg"));
@@ -31,6 +33,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
             outline = ImageIO.read(new File("assets/factoryoutline.png"));
             normal = ImageIO.read(new File("assets/default.png"));
             next = ImageIO.read(new File("assets/Next-Button-Transparent-Image.png"));
+            reset = ImageIO.read(new File("assets/reset.png"));
         } catch (Exception e) {
             System.out.println("failure");
         }
@@ -149,8 +152,8 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     
                 }
 
-                if(factory.factEmpty()) {
-                    g.fillRect(530, 380, 60, 60);
+                if(factory.factEmpty() && factory.center.size() == 0) {
+                    g.drawImage(reset, 530, 380, 60, 60, null);
                     if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
                         if(player.p1.patternLn[0].size() == 1) {
                             main.moveTokens(1, player.p1);
@@ -377,8 +380,8 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
-                if(factory.factEmpty()) {
-                    g.fillRect(530, 380, 60, 60);
+                if(factory.factEmpty() && factory.center.size() == 0) {
+                    g.drawImage(reset, 530, 380, 60, 60, null);
                     if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
                         if(player.p1.patternLn[0].size() == 1) {
                             main.moveTokens(1, player.p1);
@@ -597,8 +600,8 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
-                if(factory.factEmpty()) {
-                    g.fillRect(530, 380, 60, 60);
+                if(factory.factEmpty() && factory.center.size() == 0) {
+                    g.drawImage(reset, 530, 380, 60, 60, null);
                     if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
                         if(player.p1.patternLn[0].size() == 1) {
                             main.moveTokens(1, player.p1);
@@ -812,8 +815,8 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                     }
                 }
 
-                if(factory.factEmpty()) {
-                    g.fillRect(530, 380, 60, 60);
+                if(factory.factEmpty() && factory.center.size() == 0) {
+                    g.drawImage(reset, 530, 380, 60, 60, null);
                     if(MainAzul.mouseX >= 530 && MainAzul.mouseY >= 380 && MainAzul.mouseX <= 590 && MainAzul.mouseY <= 440) {
                         if(player.p1.patternLn[0].size() == 1) {
                             main.moveTokens(1, player.p1);
@@ -943,6 +946,14 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
 
             }
             factory.drawTokens(g);
+
+            if(main.gameWinner(player.p1, player.p2, player.p3, player.p4)) {
+                EndGamePanel.end = true;
+                MainAzul.game = false;
+            }
+        } else if(EndGamePanel.end) {
+            player.calcFinal();
+            end.endScreen(g, player.p1.points, player.p2.points, player.p3.points, player.p4.points);
         }
         
         repaint();
@@ -1024,6 +1035,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 System.out.println("f9");
                 MainAzul.tempFact = factory.f9;
             }
+            MainAzul.choice = 0;
         } else if(!temp) {
             MainAzul.patternLnChoice = e.getKeyChar() - '0';
             if(MainAzul.patternLnChoice == 1) {
@@ -1038,6 +1050,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
                 patternLine = 5;
             }
         }
+        MainAzul.choice = 0;
         repaint();
     }
     @Override
@@ -1111,5 +1124,7 @@ public class AzulPanel extends JPanel implements MouseListener, KeyListener{
         factory.f7.fills();
         factory.f8.fills();
         factory.f9.fills();
+
+        MainAzul.firstCenter = true;
     }
 }

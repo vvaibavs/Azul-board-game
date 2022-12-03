@@ -1,6 +1,4 @@
 import java.util.*;
-import java.awt.event.MouseEvent;
-import java.awt.event.MouseListener; 
 
 public class MainAzul{
 
@@ -13,6 +11,10 @@ public class MainAzul{
     public static int patternLnChoice;
     public static ArrayList<Token> center;
     public static boolean player1, player2, player3, player4;
+    public static Boolean pl1;
+    public static Boolean pl2;
+    public static Boolean pl3;
+    public static Boolean pl4;
 
     public MainAzul() {
         discarded = new ArrayList<>();
@@ -48,6 +50,11 @@ public class MainAzul{
         player2 = false;
         player3 = false;
         player4 = false;
+
+        Boolean pl1 = true;
+        Boolean pl2 = true;
+        Boolean pl3 = true;
+        Boolean pl4 = true;
     }
 
     public void choicePull(Player p, String type) {
@@ -1220,7 +1227,59 @@ public class MainAzul{
                 }
             }
         }
+        p.points -= p.deducted.size();
         p.patternLn[i-1] = new ArrayList<>();
+    }
+
+    public boolean gameWinner(Player p1, Player p2, Player p3, Player p4) {
+        for(int i = 0; i < p1.board.length; i++) {
+            pl1 = true;
+            for(int j = 0; j < p1.board[i].length; j++) {
+                if(p1.board[i][j] == null) {
+                    pl1 = false;
+                }
+            }
+            if(pl1) {
+                return pl1;
+            }
+        }
+
+        for(int i = 0; i < p2.board.length; i++) {
+            pl2 = true;
+            for(int j = 0; j < p2.board[i].length; j++) {
+                if(p2.board[i][j] == null) {
+                    pl2 = false;
+                }
+            }
+            if(pl2) {
+                return pl2;
+            }
+        }
+
+        for(int i = 0; i < p3.board.length; i++) {
+            pl3 = true;
+            for(int j = 0; j < p3.board[i].length; j++) {
+                if(p3.board[i][j] == null) {
+                    pl3 = false;
+                }
+            }
+            if(pl3) {
+                return pl3;
+            }
+        }
+
+        for(int i = 0; i < p4.board.length; i++) {
+            pl4 = true;
+            for(int j = 0; j < p4.board[i].length; j++) {
+                if(p4.board[i][j] == null) {
+                    pl4 = false;
+                }
+            }
+            if(pl4) {
+                return pl4;
+            }
+        }
+        return false;
     }
 
 }
